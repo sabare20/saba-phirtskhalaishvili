@@ -8,9 +8,6 @@ with open('homework20/homework_1_recipes.json', 'r') as file:
     recipes_data = json.load(file)
 
 def find_minimum_markets(dish, recipes_data, markets_data):
-    # Ingredients for the dish
-    if dish not in recipes_data:
-        return f"Dish '{dish}' not found in recipes."
     
     required_ingredients = set(recipes_data[dish]['ingredients'])
     markets_selected = []
@@ -28,7 +25,7 @@ def find_minimum_markets(dish, recipes_data, markets_data):
                 ingredients_covered_by_market = uncovered_products
 
         if not best_market:  # No market can provide the remaining ingredients
-            return f"Cannot find all ingredients for {dish}. Missing: {required_ingredients}"
+            return f"Cannot find all ingredients for {dish} in this city. Missing: {required_ingredients}"
 
         # Add the best market to the selection
         markets_selected.append(best_market)
@@ -37,14 +34,13 @@ def find_minimum_markets(dish, recipes_data, markets_data):
 
     return markets_selected, covered_ingredients
 
-# Input Dish
-input_dish = 'Chicken Curry'
-result = find_minimum_markets(input_dish, recipes_data, markets_data)
+def main():
+    input_dish = 'Chicken Curry'
+    result = find_minimum_markets(input_dish, recipes_data, markets_data)
 
-if isinstance(result, str):
-    print(result)  # Error message if ingredients are missing
-else:
-    selected_markets, ingredients_covered = result
+    selected_markets, ingredients_covered = result #zip
     print(f"To make '{input_dish}', you need to visit the following markets: {', '.join(selected_markets)}")
     print(f"These markets provide all the required ingredients: {', '.join(ingredients_covered)}")
+if __name__ == '__main__':
+    main()
     
