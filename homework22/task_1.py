@@ -12,6 +12,8 @@ class Inset:
     def remove(self, element):
         if element in self.elements:
             self.elements.remove(element)
+        else :
+            raise ValueError('did not found')
 
     def __str__(self):
         return str(sorted(self.elements))
