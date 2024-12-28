@@ -1,6 +1,5 @@
 import datetime
 
-# მიქსინის კლასი TimestampMixin
 class TimestampMixin:
     def __init__(self):
         self._creation_time = datetime.datetime.now()
@@ -15,7 +14,6 @@ class TimestampMixin:
     def update_modification_time(self):
         self._modification_time = datetime.datetime.now()
 
-# File კლასი
 class File(TimestampMixin):
     def __init__(self, filename):
         super().__init__()
@@ -25,7 +23,6 @@ class File(TimestampMixin):
         self.filename = new_name
         self.update_modification_time()
 
-# User კლასი
 class User(TimestampMixin):
     def __init__(self, username):
         super().__init__()
@@ -34,19 +31,17 @@ class User(TimestampMixin):
     def change_username(self, new_username):
         self.username = new_username
         self.update_modification_time()
+def main():
+    file = File("document.txt")
+    user = User("john_doe")
 
-# ობიექტების შექმნა და მათი გამოყენება
-file = File("document.txt")
-user = User("john_doe")
+    print("File creation time:", file.get_creation_time())
+    print("User creation time:", user.get_creation_time())
 
-# შექმნის დროების ჩვენება
-print("File creation time:", file.get_creation_time())
-print("User creation time:", user.get_creation_time())
+    file.rename("new_document.txt")
+    user.change_username("jane_doe")
 
-# ცვლილებების შეტანა
-file.rename("new_document.txt")
-user.change_username("jane_doe")
-
-# მოდიფიკაციის დროების ჩვენება
-print("\nFile modification time after rename:", file.get_modification_time())
-print("User modification time after username change:", user.get_modification_time())
+    print("\nFile modification time after rename:", file.get_modification_time())
+    print("User modification time after username change:", user.get_modification_time())
+if __name__ == '__main__':
+    main()
