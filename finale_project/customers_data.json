@@ -1,0 +1,12 @@
+[
+    {
+        "customerID": "C1",
+        "username": "chaxva",
+        "password": "1234",
+        "name": "giorgi chakhvadze",
+        "email": "chakhvadzeg@gmail.com",
+        "city": "kutaisi",
+        "age": 20,
+        "gender": "male"
+    }
+]
