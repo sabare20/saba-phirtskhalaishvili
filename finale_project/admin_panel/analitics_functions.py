@@ -2,7 +2,7 @@ import json
 import matplotlib.pyplot as plt
 
 # Define the file path globally
-file_path = "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/customers_data.json"
+file_path = "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/customers_data.json"
 
 
 def read_json_file():

@@ -2,9 +2,9 @@ import json
 import os
 
 # File paths
-BOARD_GAMES_FILE = "board_games_data.json"
-SALES_FILE = "sales_data.json"
-CUSTOMERS_FILE = "customers_data.json"
+BOARD_GAMES_FILE = "data/board_games_data.json"
+SALES_FILE = "data/sales_data.json"
+CUSTOMERS_FILE = "data/customers_data.json"
 
 # Load or initialize data
 if os.path.exists(BOARD_GAMES_FILE):

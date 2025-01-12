@@ -1,0 +1,93 @@
+[
+    {
+        "saleID": "S1",
+        "username": "chaxva",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35
+    },
+    {
+        "saleID": "S2",
+        "username": "ana123",
+        "gameID": "BG102",
+        "quantity": 2,
+        "totalPrice": 60
+    },
+    {
+        "saleID": "S3",
+        "username": "zura99",
+        "gameID": "BG104",
+        "quantity": 1,
+        "totalPrice": 40
+    },
+    {
+        "saleID": "S4",
+        "username": "nino_k",
+        "gameID": "BG105",
+        "quantity": 1,
+        "totalPrice": 120
+    },
+    {
+        "saleID": "S5",
+        "username": "levan88",
+        "gameID": "BG107",
+        "quantity": 3,
+        "totalPrice": 84
+    },
+    {
+        "saleID": "S6",
+        "username": "chaxva",
+        "gameID": "BG106",
+        "quantity": 2,
+        "totalPrice": 70
+    },
+    {
+        "saleID": "S7",
+        "username": "ana123",
+        "gameID": "BG108",
+        "quantity": 1,
+        "totalPrice": 45
+    },
+    {
+        "saleID": "S8",
+        "username": "zura99",
+        "gameID": "BG110",
+        "quantity": 1,
+        "totalPrice": 60
+    },
+    {
+        "saleID": "S9",
+        "username": "TornikeJinping",
+        "gameID": "BG112",
+        "quantity": 2,
+        "totalPrice": 60
+    },
+    {
+        "saleID": "S10",
+        "username": "TornikeJinping",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35
+    },
+    {
+        "saleID": "S11",
+        "username": "anano",
+        "gameID": "BG120",
+        "quantity": 3,
+        "totalPrice": 255
+    },
+    {
+        "saleID": "S12",
+        "username": "TornikeJinping",
+        "gameID": "BG119",
+        "quantity": 1,
+        "totalPrice": 65
+    },
+    {
+        "saleID": "S13",
+        "username": "laura",
+        "gameID": "BG117",
+        "quantity": 1,
+        "totalPrice": 70
+    }
+]
