@@ -4,7 +4,7 @@
             "gameID": "BG101",
             "name": "Catan",
             "price": 35.99,
-            "stock": 118
+            "stock": 18
         },
         {
             "gameID": "BG102",
@@ -34,6 +34,13 @@
             "gameID": "BG102",
             "quantity": 2,
             "totalPrice": 59.98
+        },
+        {
+            "saleID": "S4",
+            "username": "Tornike",
+            "gameID": "BG101",
+            "quantity": 100,
+            "totalPrice": 3599.0
         }
     ],
     "customers": [
@@ -60,6 +67,12 @@
             "password": "pircxopircxo",
             "name": "saba pircxalaishvili",
             "city": "tbilisi"
+        },
+        {
+            "username": "Tornike",
+            "password": "Leverage123",
+            "name": "TornikeG",
+            "city": "Tbilisi"
         }
     ]
 }

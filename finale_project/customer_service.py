@@ -8,8 +8,6 @@ if os.path.exists(DATA_FILE):
         data = json.load(file)
 
 
-
-
 # Function to save updated data to file
 def save_data():
     with open(DATA_FILE, "w") as file:
