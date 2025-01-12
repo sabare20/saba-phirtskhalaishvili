@@ -44,7 +44,7 @@ def analyze_gender_distribution(file_path="C:/Users/tornike/PycharmProjects/saba
 
 
 def main():
-    average_age = calculate_average_age()
+    calculate_average_age()
     analyze_gender_distribution()
 
 

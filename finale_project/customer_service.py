@@ -179,6 +179,7 @@ def process_payment(amount):
         print("Please pay in cash at the shop.")
     return True
 
+
 # Function to handle the customer's game selection
 def select_games():
     basket = []  # Initialize an empty basket
