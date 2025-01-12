@@ -28,5 +28,15 @@
         "city": "Kutaisi",
         "age": 35,
         "gender": "Female"
+    },
+    {
+        "customerID": "C4",
+        "username": "laura",
+        "password": "mzeqala123",
+        "name": "Laurashop",
+        "email": "laura.mzeqalishvili123@gmail.com",
+        "city": "ozurgeti",
+        "age": 53,
+        "gender": "female"
     }
 ]
