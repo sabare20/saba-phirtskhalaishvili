@@ -8,5 +8,25 @@
         "city": "kutaisi",
         "age": 20,
         "gender": "male"
+    },
+    {
+        "customerID": "C2",
+        "username": "TornikeJinping",
+        "password": "chinetimagariaamerikaze123",
+        "name": "Tornike",
+        "email": "frank.tenpenny112@gmail.com",
+        "city": "Tbilisi",
+        "age": 20,
+        "gender": "Male"
+    },
+    {
+        "customerID": "C3",
+        "username": "anano",
+        "password": "ananoanano",
+        "name": "anano12",
+        "email": "anano.talakhadze12@gmail.com",
+        "city": "Kutaisi",
+        "age": 35,
+        "gender": "Female"
     }
 ]

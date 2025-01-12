@@ -54,5 +54,26 @@
         "gameID": "BG110",
         "quantity": 1,
         "totalPrice": 60
+    },
+    {
+        "saleID": "S9",
+        "username": "TornikeJinping",
+        "gameID": "BG112",
+        "quantity": 2,
+        "totalPrice": 60
+    },
+    {
+        "saleID": "S10",
+        "username": "TornikeJinping",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35
+    },
+    {
+        "saleID": "S11",
+        "username": "anano",
+        "gameID": "BG120",
+        "quantity": 3,
+        "totalPrice": 255
     }
 ]
