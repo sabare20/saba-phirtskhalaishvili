@@ -28,7 +28,7 @@ def calculate_average_age():
         return "No customers found"
 
 
-def analyze_gender_distribution():
+def gender_distribution():
     data = read_json_file()
 
     gender_count = {"male": 0, "female": 0}
@@ -49,9 +49,38 @@ def analyze_gender_distribution():
     print("Gender Distribution:", gender_count)
 
 
+def city_distribution():
+    data = read_json_file()
+
+    city_count = {}
+
+    for customer in data:
+        city = customer.get("city", "").lower()
+        if city:
+            city_count[city] = city_count.get(city, 0) + 1
+
+    sorted_cities = sorted(city_count.items())
+    cities, counts = zip(*sorted_cities)
+
+    colors = ["#66b3ff", "#ffcc00", "#ff6347", "#98fb98", "#ff1493", "#f0e68c", "#dda0dd", "#00fa9a"]
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(cities, counts, marker='o', color='blue', linestyle='-', markersize=8)
+
+    plt.title("City Distribution of Customers", fontsize=14)
+    plt.xlabel("Cities", fontsize=12)
+    plt.ylabel("Quantity of Products Sold", fontsize=12)
+
+    plt.grid(True)
+    plt.xticks(rotation=45)
+    plt.tight_layout()
+    plt.show()
+
+
 def main():
     calculate_average_age()
-    analyze_gender_distribution()
+    gender_distribution()
+    city_distribution()
 
 
 if __name__ == "__main__":
