@@ -1,10 +1,17 @@
 import json
 import matplotlib.pyplot as plt
 
+# Define the file path globally
+file_path = "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/customers_data.json"
 
-def calculate_average_age(file_path="C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/customers_data.json"):
+
+def read_json_file():
     with open(file_path, "r") as file:
-        data = json.load(file)
+        return json.load(file)
+
+
+def calculate_average_age():
+    data = read_json_file()
 
     total_age = 0
     customer_count = len(data)
@@ -21,9 +28,8 @@ def calculate_average_age(file_path="C:/Users/tornike/PycharmProjects/saba-phirt
         return "No customers found"
 
 
-def analyze_gender_distribution(file_path="C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/customers_data.json"):
-    with open(file_path, "r") as file:
-        data = json.load(file)
+def analyze_gender_distribution():
+    data = read_json_file()
 
     gender_count = {"male": 0, "female": 0}
 
