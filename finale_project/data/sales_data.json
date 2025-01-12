@@ -89,5 +89,19 @@
         "gameID": "BG117",
         "quantity": 1,
         "totalPrice": 70
+    },
+    {
+        "saleID": "S14",
+        "username": "gogla",
+        "gameID": "BG112",
+        "quantity": 3,
+        "totalPrice": 90
+    },
+    {
+        "saleID": "S15",
+        "username": "gogla",
+        "gameID": "BG107",
+        "quantity": 1,
+        "totalPrice": 28
     }
 ]

@@ -38,5 +38,15 @@
         "city": "ozurgeti",
         "age": 53,
         "gender": "female"
+    },
+    {
+        "customerID": "C5",
+        "username": "gogla",
+        "password": "Rightwinger123",
+        "name": "Tornike",
+        "email": "tornike.goglidze19@gmail.com",
+        "city": "Tbilisi",
+        "age": 20,
+        "gender": "male"
     }
 ]
