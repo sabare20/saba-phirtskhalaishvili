@@ -36,7 +36,7 @@ def calculate_average_age():
 
     if customer_count > 0:
         average_age = total_age / customer_count
-        print(f"The average age is: {round(average_age, 2)}")
+        print(f"The Average Age is: {round(average_age, 2)}")
         return average_age
     else:
         print("No customers found")
@@ -108,12 +108,12 @@ def calculate_and_visualize_revenue():
 
     for i in sales_data:
         total_quantity += i["quantity"]
-    print(f"total quantity of sold board_games: {total_quantity}")
+    print(f"Total Quantity of Sold Board_Games: {total_quantity}")
 
     revenue_by_city = {}
     for sale in sales_data:
         city = sale["city"]
-        revenue = sale["quantity"] * sale["totalPrice"]
+        revenue = sale["totalPrice"]
         if city in revenue_by_city:
             revenue_by_city[city] += revenue
         else:
@@ -125,7 +125,7 @@ def calculate_and_visualize_revenue():
     # Print revenue by each city
     print("\nCity-wise Revenue:")
     for city, revenue in revenue_by_city.items():
-        print(f"{city}: ${revenue:.2f}")
+        print(f"\t-{city}: ${revenue:.2f}")
 
     # Prepare data for visualization
     cities = list(revenue_by_city.keys())
