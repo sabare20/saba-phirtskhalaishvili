@@ -138,5 +138,12 @@
         "gameID": "BG117",
         "quantity": 1,
         "totalPrice": 70
+    },
+    {
+        "saleID": "S21",
+        "username": "TornikeJinping",
+        "gameID": "BG117",
+        "quantity": 2,
+        "totalPrice": 140
     }
 ]
