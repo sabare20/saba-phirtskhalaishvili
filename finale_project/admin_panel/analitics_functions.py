@@ -59,6 +59,16 @@ def city_distribution():
         if city:
             city_count[city] = city_count.get(city, 0) + 1
 
+    # Print sales in each city
+    print("Sales in each city:")
+    for city, count in city_count.items():
+        print(f"\t-{city.capitalize()}: {count} sales")
+
+    # Find the city with the maximum sales
+    max_city = max(city_count, key=city_count.get)
+    max_sales = city_count[max_city]
+    print(f"\nThe highest number of sales ({max_sales} sales) occurred in {max_city.capitalize()}.")
+
     sorted_cities = sorted(city_count.items())
     cities, counts = zip(*sorted_cities)
 
@@ -79,7 +89,9 @@ def city_distribution():
 
 def main():
     calculate_average_age()
+    print("-" * 5)
     gender_distribution()
+    print("-" * 5)
     city_distribution()
 
 
