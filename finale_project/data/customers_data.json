@@ -1,6 +1,5 @@
 [
     {
-        "customerID": "C1",
         "username": "chaxva",
         "password": "1234",
         "name": "giorgi chakhvadze",
@@ -10,7 +9,6 @@
         "gender": "male"
     },
     {
-        "customerID": "C2",
         "username": "TornikeJinping",
         "password": "chinetimagariaamerikaze123",
         "name": "Tornike",
@@ -20,7 +18,6 @@
         "gender": "Male"
     },
     {
-        "customerID": "C3",
         "username": "anano",
         "password": "ananoanano",
         "name": "anano12",
@@ -30,7 +27,6 @@
         "gender": "Female"
     },
     {
-        "customerID": "C4",
         "username": "laura",
         "password": "mzeqala123",
         "name": "Laurashop",
@@ -40,13 +36,21 @@
         "gender": "female"
     },
     {
-        "customerID": "C5",
-        "username": "dato",
-        "password": "daviti123",
-        "name": "daviti",
-        "email": "davitdavitaia@gmail.com",
-        "city": "zugdidi",
-        "age": 19,
+        "username": "gogla",
+        "password": "Rightwinger123",
+        "name": "Tornike",
+        "email": "tornike.goglidze19@gmail.com",
+        "city": "Tbilisi",
+        "age": 20,
         "gender": "male"
+    },
+    {
+        "username": "ninidabru",
+        "password": "nininini",
+        "name": "nini dabrundashvili",
+        "email": "nini.dabru@gmail.com",
+        "city": "tbilisi",
+        "age": 20,
+        "gender": "Female"
     }
 ]

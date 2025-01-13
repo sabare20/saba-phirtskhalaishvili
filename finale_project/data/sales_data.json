@@ -92,23 +92,51 @@
     },
     {
         "saleID": "S14",
-        "username": "chaxva",
+        "username": "gogla",
+        "gameID": "BG112",
+        "quantity": 3,
+        "totalPrice": 90
+    },
+    {
+        "saleID": "S15",
+        "username": "gogla",
+        "gameID": "BG107",
+        "quantity": 1,
+        "totalPrice": 28
+    },
+    {
+        "saleID": "S16",
+        "username": "ninidabru",
+        "gameID": "BG115",
+        "quantity": 2,
+        "totalPrice": 40
+    },
+    {
+        "saleID": "S17",
+        "username": "ninidabru",
         "gameID": "BG117",
         "quantity": 1,
         "totalPrice": 70
     },
     {
-        "saleID": "S15",
-        "username": "dato",
-        "gameID": "BG107",
-        "quantity": 2,
-        "totalPrice": 56
+        "saleID": "S18",
+        "username": "guest",
+        "gameID": "BG116",
+        "quantity": 1,
+        "totalPrice": 18
     },
     {
-        "saleID": "S16",
-        "username": "dato",
-        "gameID": "BG112",
+        "saleID": "S19",
+        "username": "guest",
+        "gameID": "BG120",
+        "quantity": 2,
+        "totalPrice": 170
+    },
+    {
+        "saleID": "S20",
+        "username": "guest",
+        "gameID": "BG117",
         "quantity": 1,
-        "totalPrice": 30
+        "totalPrice": 70
     }
 ]
