@@ -297,7 +297,7 @@ def calculate_total_price(basket):
 
 # Function to handle customer purchase
 def purchase_game():
-    action = input("Do you want to log in or register? (log in/register): ").lower()
+    action = input("Do you want to log in, register, or proceed as a guest? (log in/register/guest): ").lower()
 
     if action == "register":
         customer = register_customer()
@@ -305,8 +305,11 @@ def purchase_game():
         customer = login_customer()
         if not customer:
             return  # Exit if login fails or customer doesn't register
+    elif action == "guest":
+        customer = {"username": "guest", "name": "Guest User", "email": "", "city": "", "age": 0, "gender": ""}
+        print("Proceeding as a guest. No registration required.")
     else:
-        print("Invalid option. Please choose 'log in' or 'register'.")
+        print("Invalid option. Please choose 'log in', 'register', or 'guest'.")
         return
 
     # Show purchase history

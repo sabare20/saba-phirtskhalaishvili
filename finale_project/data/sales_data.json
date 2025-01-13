@@ -117,5 +117,19 @@
         "gameID": "BG117",
         "quantity": 1,
         "totalPrice": 70
+    },
+    {
+        "saleID": "S18",
+        "username": "guest",
+        "gameID": "BG116",
+        "quantity": 1,
+        "totalPrice": 18
+    },
+    {
+        "saleID": "S19",
+        "username": "guest",
+        "gameID": "BG120",
+        "quantity": 2,
+        "totalPrice": 170
     }
 ]
