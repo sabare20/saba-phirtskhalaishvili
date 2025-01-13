@@ -1,5 +1,16 @@
 import json
 import os
+from datetime import datetime
+
+def datetime_serializer(obj):
+    if isinstance(obj, datetime):
+        return obj.strftime('%Y-%m-%d %H:%M:%S')
+    raise TypeError(f'Type {obj.__class__.__name__} not serializable')
+
+# Then when saving sales, use the custom serializer:
+def save_sales():
+    with open(SALES_FILE, "w") as file:
+        json.dump(sales, file, indent=4, default=datetime_serializer)
 
 # File paths
 BOARD_GAMES_FILE = "data/board_games_data.json"
@@ -366,7 +377,8 @@ def purchase_game():
                 "gameID": item["gameID"],
                 "quantity": item["quantity"],
                 "totalPrice": item["price"] * item["quantity"],
-                "city": customer["city"]
+                "city": customer["city"],
+                "Date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
             })
 
         # Save changes to the board games and sales

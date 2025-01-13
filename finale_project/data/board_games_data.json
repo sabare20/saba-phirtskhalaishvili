@@ -87,7 +87,7 @@
         "gameID": "BG115",
         "name": "Codenames",
         "price": 20,
-        "stock": 98
+        "stock": 97
     },
     {
         "gameID": "BG116",
@@ -105,13 +105,13 @@
         "gameID": "BG118",
         "name": "Patchwork",
         "price": 25,
-        "stock": 50
+        "stock": 49
     },
     {
         "gameID": "BG119",
         "name": "Arkham Horror",
         "price": 65,
-        "stock": 14
+        "stock": 13
     },
     {
         "gameID": "BG120",

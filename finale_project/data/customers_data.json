@@ -18,24 +18,6 @@
         "gender": "Male"
     },
     {
-        "username": "anano",
-        "password": "ananoanano",
-        "name": "anano12",
-        "email": "anano.talakhadze12@gmail.com",
-        "city": "Kutaisi",
-        "age": 35,
-        "gender": "Female"
-    },
-    {
-        "username": "laura",
-        "password": "mzeqala123",
-        "name": "Laurashop",
-        "email": "laura.mzeqalishvili123@gmail.com",
-        "city": "ozurgeti",
-        "age": 53,
-        "gender": "female"
-    },
-    {
         "username": "gogla",
         "password": "Rightwinger123",
         "name": "Tornike",
@@ -52,5 +34,14 @@
         "city": "tbilisi",
         "age": 20,
         "gender": "Female"
+    },
+    {
+        "username": "sandro_chaxva",
+        "password": "sandro chaxva",
+        "name": "sandro chakhvadze",
+        "email": "sandro.ch@gmail.com",
+        "city": "borjomi",
+        "age": 18,
+        "gender": "Male"
     }
 ]

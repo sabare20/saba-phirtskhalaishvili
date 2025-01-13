@@ -154,5 +154,30 @@
         "quantity": 2,
         "totalPrice": 170,
         "city": "kutaisi"
+    },
+    {
+        "saleID": "S23",
+        "username": "sandro_chaxva",
+        "gameID": "BG118",
+        "quantity": 1,
+        "totalPrice": 25,
+        "city": "borjomi"
+    },
+    {
+        "saleID": "S24",
+        "username": "chaxva",
+        "gameID": "BG119",
+        "quantity": 1,
+        "totalPrice": 65,
+        "city": "kutaisi"
+    },
+    {
+        "saleID": "S25",
+        "username": "chaxva",
+        "gameID": "BG115",
+        "quantity": 1,
+        "totalPrice": 20,
+        "city": "kutaisi",
+        "Date": "2025-01-13 17:24:41"
     }
 ]
