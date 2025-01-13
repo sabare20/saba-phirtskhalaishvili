@@ -1,17 +1,31 @@
 import json
 import matplotlib.pyplot as plt
 
-# Define the file path globally
-file_path = "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/customers_data.json"
+
+class JSONReader:
+    def __init__(self, customer_file_path, sales_file_path):
+        self.customer_file_path = customer_file_path
+        self.sales_file_path = sales_file_path
+
+    def read_customers(self):
+        with open(self.customer_file_path, "r") as file:
+            return json.load(file)
+
+    def read_sales(self):
+        with open(self.sales_file_path, "r") as file:
+            return json.load(file)
 
 
-def read_json_file():
-    with open(file_path, "r") as file:
-        return json.load(file)
+# Instantiate the JSONReader
+reader = JSONReader(
+    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/customers_data.json",
+    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/sales_data.json"
+)
 
 
+# Updated functions to use JSONReader
 def calculate_average_age():
-    data = read_json_file()
+    data = reader.read_customers()
 
     total_age = 0
     customer_count = len(data)
@@ -29,7 +43,7 @@ def calculate_average_age():
 
 
 def gender_distribution():
-    data = read_json_file()
+    data = reader.read_customers()
 
     gender_count = {"male": 0, "female": 0}
 
@@ -50,7 +64,7 @@ def gender_distribution():
 
 
 def city_distribution():
-    data = read_json_file()
+    data = reader.read_customers()
 
     city_count = {}
 
@@ -87,12 +101,30 @@ def city_distribution():
     plt.show()
 
 
+def total_sales():
+    data = reader.read_sales()
+
+    total_price = 0
+    total_quantity = 0
+
+    for i in data:
+        total_quantity += i["quantity"]
+        total_price += i["totalPrice"]
+    print(f"total quantity of sold board_games: {total_quantity}")
+    number = total_price * total_quantity
+    formatted_number = "{:,}".format(number)
+    print(f"total revenue of board_games: $ {formatted_number}")
+    return total_quantity, total_price
+
+
 def main():
     calculate_average_age()
     print("-" * 5)
     gender_distribution()
     print("-" * 5)
     city_distribution()
+    print("-" * 5)
+    total_sales()
 
 
 if __name__ == "__main__":
