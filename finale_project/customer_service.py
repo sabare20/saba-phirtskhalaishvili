@@ -141,10 +141,13 @@ def register_customer():
     save_customers()
     print(f"Registration complete! Welcome, {name}.")
     return new_customer
+
+
 # Function to handle guest behavior
 def guest():
     print("Proceeding as a guest. No registration required.")
     return {"username": "guest", "name": "Guest User", "email": "", "city": "", "age": 0, "gender": ""}
+
 
 # Function to handle customer login
 def login_customer():
@@ -302,6 +305,7 @@ def select_games():
 def calculate_total_price(basket):
     total_price = sum(item["price"] * item["quantity"] for item in basket)
     return total_price
+
 
 # Function to handle customer purchase
 def purchase_game():
