@@ -2,9 +2,9 @@ import json
 import os
 
 # File paths
-BOARD_GAMES_FILE = "data/board_games_data.json"
-SALES_FILE = "data/sales_data.json"
-CUSTOMERS_FILE = "data/customers_data.json"
+BOARD_GAMES_FILE = "finale_project/data/board_games_data.json"
+SALES_FILE = "finale_project/data/sales_data.json"
+CUSTOMERS_FILE = "finale_project/data/customers_data.json"
 
 # Load or initialize data
 if os.path.exists(BOARD_GAMES_FILE):
@@ -230,7 +230,7 @@ def handle_delivery(customer, total_price):
     agree_delivery = input("Do you agree to pay the delivery fee and proceed with delivery? (yes/no): ").lower()
     if agree_delivery == "yes":
         print("Delivery confirmed. Processing your payment...")
-        return total_with_delivery  # Return updated total amount with delivery fee
+        return total_with_delivery # Return updated total amount with delivery fee
     else:
         print("You chose not to proceed with delivery. Please visit our shop to pick up your order.")
         return total_price  # Return original total amount without delivery fee
@@ -365,7 +365,8 @@ def purchase_game():
                 "username": customer["username"],
                 "gameID": item["gameID"],
                 "quantity": item["quantity"],
-                "totalPrice": item["price"] * item["quantity"]
+                "totalPrice": item["price"] * item["quantity"],
+                'city': customer['city']
             })
 
         # Save changes to the board games and sales

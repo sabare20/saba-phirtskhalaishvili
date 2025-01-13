@@ -138,5 +138,13 @@
         "gameID": "BG117",
         "quantity": 1,
         "totalPrice": 70
+    },
+    {
+        "saleID": "S21",
+        "username": "chaxva",
+        "gameID": "BG101",
+        "quantity": 5,
+        "totalPrice": 175,
+        "city": "kutaisi"
     }
 ]
