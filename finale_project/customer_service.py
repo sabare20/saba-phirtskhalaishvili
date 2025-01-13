@@ -141,6 +141,10 @@ def register_customer():
     save_customers()
     print(f"Registration complete! Welcome, {name}.")
     return new_customer
+# Function to handle guest behavior
+def guest():
+    print("Proceeding as a guest. No registration required.")
+    return {"username": "guest", "name": "Guest User", "email": "", "city": "", "age": 0, "gender": ""}
 
 # Function to handle customer login
 def login_customer():
@@ -150,11 +154,13 @@ def login_customer():
             print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
         elif not any(c["username"] == username for c in customers):
             print("Username not found.")
-            choice = input("Would you like to try again or register? (try/register): ").lower()
+            choice = input("Would you like to try again, register, or proceed as a guest? (try/register/guest): ").lower()
             if choice == "register":
                 return register_customer()
             elif choice == "try":
                 continue
+            elif choice == "guest":
+                return guest()  # Allow the user to proceed as a guest
             else:
                 print("Invalid choice. Please try again.")
                 continue
@@ -174,12 +180,15 @@ def login_customer():
     customer = next((c for c in customers if c["username"] == username and c["password"] == password), None)
     if not customer:
         print("Invalid username or password. If you don't have an account, please register.")
-        choice = input("Would you like to register? (yes/no): ").lower()
-        if choice == "yes":
+        choice = input("Would you like to register or proceed as a guest? (register/guest): ").lower()
+        if choice == "register":
             return register_customer()
+        elif choice == "guest":
+            return guest()  # Allow the user to proceed as a guest
         else:
-            print("You must have an account to make purchases.")
+            print("Invalid choice. Please try again.")
             return None
+
     print(f"Welcome back, {customer['name']}!")
     return customer
 
@@ -294,7 +303,6 @@ def calculate_total_price(basket):
     total_price = sum(item["price"] * item["quantity"] for item in basket)
     return total_price
 
-
 # Function to handle customer purchase
 def purchase_game():
     action = input("Do you want to log in, register, or proceed as a guest? (log in/register/guest): ").lower()
@@ -306,11 +314,11 @@ def purchase_game():
         if not customer:
             return  # Exit if login fails or customer doesn't register
     elif action == "guest":
-        customer = {"username": "guest", "name": "Guest User", "email": "", "city": "", "age": 0, "gender": ""}
-        print("Proceeding as a guest. No registration required.")
+        customer = guest()  # Call guest() function here
     else:
         print("Invalid option. Please choose 'log in', 'register', or 'guest'.")
         return
+
 
     # Show purchase history
     view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
