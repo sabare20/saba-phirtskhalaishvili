@@ -1,5 +1,8 @@
 import json
+import seaborn as sns
 import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
 
 
 class JSONReader:
@@ -33,7 +36,7 @@ def calculate_average_age():
 
     if customer_count > 0:
         average_age = total_age / customer_count
-        print(f"The average age is: {average_age}")
+        print(f"The average age is: {round(average_age, 2)}")
         return average_age
     else:
         print("No customers found")
@@ -81,38 +84,71 @@ def city_distribution():
     max_sales = city_count[max_city]
     print(f"\nThe highest number of sales ({max_sales} sales) occurred in {max_city.capitalize()}.")
 
+    # Visualization
     sorted_cities = sorted(city_count.items())
     cities, counts = zip(*sorted_cities)
 
-    colors = ["#66b3ff", "#ffcc00", "#ff6347", "#98fb98", "#ff1493", "#f0e68c", "#dda0dd", "#00fa9a"]
+    city_df = pd.DataFrame(counts, index=cities, columns=["Sales"])
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(cities, counts, marker='o', color='blue', linestyle='-', markersize=8)
+    plt.figure(figsize=(12, 6))
+    sns.heatmap(city_df.T, annot=True, cmap='YlGnBu', cbar=True, fmt="d", linewidths=0.5)
 
-    plt.title("City Distribution of Customers", fontsize=14)
+    plt.title("City Distribution of Customers (Heatmap)", fontsize=16)
     plt.xlabel("Cities", fontsize=12)
-    plt.ylabel("Quantity of Products Sold", fontsize=12)
-
-    plt.grid(True)
+    plt.ylabel("Sales", fontsize=12)
     plt.xticks(rotation=45)
     plt.tight_layout()
     plt.show()
 
 
-def total_sales():
-    data = reader.read_sales()
+def calculate_and_visualize_revenue():
+    sales_data = reader.read_sales()
 
-    total_price = 0
     total_quantity = 0
 
-    for i in data:
+    for i in sales_data:
         total_quantity += i["quantity"]
-        total_price += i["totalPrice"]
     print(f"total quantity of sold board_games: {total_quantity}")
-    number = total_price * total_quantity
-    formatted_number = "{:,}".format(number)
-    print(f"total revenue of board_games: $ {formatted_number}")
-    return total_quantity, total_price
+
+    revenue_by_city = {}
+    for sale in sales_data:
+        city = sale["city"]
+        revenue = sale["quantity"] * sale["totalPrice"]
+        if city in revenue_by_city:
+            revenue_by_city[city] += revenue
+        else:
+            revenue_by_city[city] = revenue
+
+    total_revenue = sum(revenue_by_city.values())
+    print(f"Total Revenue Across All Cities: ${total_revenue:.2f}")
+
+    # Print revenue by each city
+    print("\nCity-wise Revenue:")
+    for city, revenue in revenue_by_city.items():
+        print(f"{city}: ${revenue:.2f}")
+
+    # Prepare data for visualization
+    cities = list(revenue_by_city.keys())
+    revenues = list(revenue_by_city.values())
+
+    revenue_array = np.array(revenues)
+    color_threshold = np.percentile(revenue_array, 75)  # Define a threshold for "much higher revenue"
+    colors = ["lightblue" if revenue < color_threshold else "orange" for revenue in revenues]
+
+    plt.figure(figsize=(10, 6))
+    bars = plt.bar(cities, revenues, color=colors, edgecolor="black")
+
+    for bar, revenue in zip(bars, revenues):
+        plt.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1,
+                 f"${revenue:.2f}", ha='center', fontsize=10)
+
+    plt.title("Total Revenue by City", fontsize=16)
+    plt.xlabel("City", fontsize=14)
+    plt.ylabel("Revenue ($)", fontsize=14)
+    plt.xticks(rotation=45, fontsize=12)
+    plt.tight_layout()
+
+    plt.show()
 
 
 def main():
@@ -122,7 +158,7 @@ def main():
     print("-" * 5)
     city_distribution()
     print("-" * 5)
-    total_sales()
+    calculate_and_visualize_revenue()
 
 
 if __name__ == "__main__":

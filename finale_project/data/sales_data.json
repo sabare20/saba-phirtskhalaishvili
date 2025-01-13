@@ -1,183 +1,389 @@
 [
     {
         "saleID": "S1",
-        "username": "chaxva",
-        "gameID": "BG101",
-        "quantity": 1,
-        "totalPrice": 35
+        "username": "ana.gor",
+        "gameID": "BG115",
+        "quantity": 3,
+        "totalPrice": 60,
+        "city": "gori",
+        "Date": "2024-12-27 13:52:15"
     },
     {
         "saleID": "S2",
-        "username": "ana123",
-        "gameID": "BG102",
-        "quantity": 2,
-        "totalPrice": 60
+        "username": "tikoBeka",
+        "gameID": "BG109",
+        "quantity": 1,
+        "totalPrice": 50,
+        "city": "mestia",
+        "Date": "2024-12-27 13:52:15"
     },
     {
         "saleID": "S3",
-        "username": "zura99",
-        "gameID": "BG104",
-        "quantity": 1,
-        "totalPrice": 40
+        "username": "zura123",
+        "gameID": "BG118",
+        "quantity": 3,
+        "totalPrice": 75,
+        "city": "gori",
+        "Date": "2025-01-06 13:52:15"
     },
     {
         "saleID": "S4",
-        "username": "nino_k",
-        "gameID": "BG105",
-        "quantity": 1,
-        "totalPrice": 120
+        "username": "anano",
+        "gameID": "BG112",
+        "quantity": 3,
+        "totalPrice": 90,
+        "city": "kutaisi",
+        "Date": "2025-01-03 13:52:15"
     },
     {
         "saleID": "S5",
-        "username": "levan88",
-        "gameID": "BG107",
-        "quantity": 3,
-        "totalPrice": 84
+        "username": "nika_batu",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35,
+        "city": "batumi",
+        "Date": "2025-01-08 13:52:15"
     },
     {
         "saleID": "S6",
-        "username": "chaxva",
-        "gameID": "BG106",
-        "quantity": 2,
-        "totalPrice": 70
+        "username": "TornikeJinping",
+        "gameID": "BG116",
+        "quantity": 1,
+        "totalPrice": 18,
+        "city": "tbilisi",
+        "Date": "2024-12-21 13:52:15"
     },
     {
         "saleID": "S7",
-        "username": "ana123",
-        "gameID": "BG108",
+        "username": "mari_t",
+        "gameID": "BG106",
         "quantity": 1,
-        "totalPrice": 45
+        "totalPrice": 35,
+        "city": "tbilisi",
+        "Date": "2024-12-20 13:52:15"
     },
     {
         "saleID": "S8",
-        "username": "zura99",
-        "gameID": "BG110",
-        "quantity": 1,
-        "totalPrice": 60
+        "username": "salome_tbs",
+        "gameID": "BG119",
+        "quantity": 3,
+        "totalPrice": 195,
+        "city": "tbilisi",
+        "Date": "2024-12-23 13:52:15"
     },
     {
         "saleID": "S9",
-        "username": "TornikeJinping",
-        "gameID": "BG112",
-        "quantity": 2,
-        "totalPrice": 60
+        "username": "mariamS",
+        "gameID": "BG105",
+        "quantity": 1,
+        "totalPrice": 120,
+        "city": "signagi",
+        "Date": "2025-01-09 13:52:15"
     },
     {
         "saleID": "S10",
-        "username": "TornikeJinping",
-        "gameID": "BG101",
-        "quantity": 1,
-        "totalPrice": 35
+        "username": "salome_tbs",
+        "gameID": "BG111",
+        "quantity": 3,
+        "totalPrice": 165,
+        "city": "tbilisi",
+        "Date": "2024-12-20 13:52:15"
     },
     {
         "saleID": "S11",
-        "username": "anano",
-        "gameID": "BG120",
-        "quantity": 3,
-        "totalPrice": 255
+        "username": "sopo_dmanisi",
+        "gameID": "BG103",
+        "quantity": 1,
+        "totalPrice": 25,
+        "city": "dmanisi",
+        "Date": "2025-01-06 13:52:15"
     },
     {
         "saleID": "S12",
-        "username": "TornikeJinping",
-        "gameID": "BG119",
-        "quantity": 1,
-        "totalPrice": 65
+        "username": "davit.aqa",
+        "gameID": "BG117",
+        "quantity": 3,
+        "totalPrice": 210,
+        "city": "akhaltsikhe",
+        "Date": "2024-12-14 13:52:15"
     },
     {
         "saleID": "S13",
-        "username": "laura",
-        "gameID": "BG117",
+        "username": "nika_batu",
+        "gameID": "BG110",
         "quantity": 1,
-        "totalPrice": 70
+        "totalPrice": 60,
+        "city": "batumi",
+        "Date": "2024-12-27 13:52:15"
     },
     {
         "saleID": "S14",
-        "username": "gogla",
-        "gameID": "BG112",
+        "username": "nina_gori",
+        "gameID": "BG108",
         "quantity": 3,
-        "totalPrice": 90
+        "totalPrice": 135,
+        "city": "gori",
+        "Date": "2024-12-30 13:52:15"
     },
     {
         "saleID": "S15",
-        "username": "gogla",
+        "username": "nika_batu",
         "gameID": "BG107",
-        "quantity": 1,
-        "totalPrice": 28
+        "quantity": 3,
+        "totalPrice": 84,
+        "city": "batumi",
+        "Date": "2025-01-10 13:52:15"
     },
     {
         "saleID": "S16",
-        "username": "ninidabru",
-        "gameID": "BG115",
+        "username": "tikoBeka",
+        "gameID": "BG113",
         "quantity": 2,
-        "totalPrice": 40
+        "totalPrice": 140,
+        "city": "mestia",
+        "Date": "2025-01-06 13:52:15"
     },
     {
         "saleID": "S17",
         "username": "ninidabru",
-        "gameID": "BG117",
-        "quantity": 1,
-        "totalPrice": 70
-    },
-    {
-        "saleID": "S18",
-        "username": "guest",
-        "gameID": "BG116",
-        "quantity": 1,
-        "totalPrice": 18
-    },
-    {
-        "saleID": "S19",
-        "username": "guest",
-        "gameID": "BG120",
-        "quantity": 2,
-        "totalPrice": 170
-    },
-    {
-        "saleID": "S20",
-        "username": "guest",
-        "gameID": "BG117",
-        "quantity": 1,
-        "totalPrice": 70
-    },
-    {
-        "saleID": "S21",
-        "username": "chaxva",
-        "gameID": "BG101",
-        "quantity": 5,
-        "totalPrice": 175,
-        "city": "kutaisi"
-    },
-    {
-        "saleID": "S22",
-        "username": "chaxva",
         "gameID": "BG120",
         "quantity": 2,
         "totalPrice": 170,
-        "city": "kutaisi"
+        "city": "tbilisi",
+        "Date": "2025-01-09 13:52:15"
+    },
+    {
+        "saleID": "S18",
+        "username": "davit.aqa",
+        "gameID": "BG114",
+        "quantity": 3,
+        "totalPrice": 105,
+        "city": "akhaltsikhe",
+        "Date": "2024-12-29 13:52:15"
+    },
+    {
+        "saleID": "S19",
+        "username": "giga_axa",
+        "gameID": "BG120",
+        "quantity": 3,
+        "totalPrice": 255,
+        "city": "akhaltsikhe",
+        "Date": "2025-01-12 13:52:15"
+    },
+    {
+        "saleID": "S20",
+        "username": "TornikeJinping",
+        "gameID": "BG104",
+        "quantity": 1,
+        "totalPrice": 40,
+        "city": "tbilisi",
+        "Date": "2025-01-07 13:52:15"
+    },
+    {
+        "saleID": "S21",
+        "username": "sopo_dmanisi",
+        "gameID": "BG102",
+        "quantity": 1,
+        "totalPrice": 30,
+        "city": "dmanisi",
+        "Date": "2024-12-22 13:52:15"
+    },
+    {
+        "saleID": "S22",
+        "username": "tamta.d",
+        "gameID": "BG119",
+        "quantity": 3,
+        "totalPrice": 195,
+        "city": "dmanisi",
+        "Date": "2024-12-21 13:52:15"
     },
     {
         "saleID": "S23",
-        "username": "sandro_chaxva",
-        "gameID": "BG118",
+        "username": "ana.gor",
+        "gameID": "BG101",
         "quantity": 1,
-        "totalPrice": 25,
-        "city": "borjomi"
+        "totalPrice": 35,
+        "city": "gori",
+        "Date": "2024-12-25 13:52:15"
     },
     {
         "saleID": "S24",
-        "username": "chaxva",
-        "gameID": "BG119",
-        "quantity": 1,
-        "totalPrice": 65,
-        "city": "kutaisi"
+        "username": "davit.aqa",
+        "gameID": "BG105",
+        "quantity": 3,
+        "totalPrice": 360,
+        "city": "akhaltsikhe",
+        "Date": "2025-01-10 13:52:15"
     },
     {
         "saleID": "S25",
-        "username": "chaxva",
-        "gameID": "BG115",
-        "quantity": 1,
-        "totalPrice": 20,
+        "username": "vaxo.sig",
+        "gameID": "BG111",
+        "quantity": 2,
+        "totalPrice": 110,
+        "city": "signagi",
+        "Date": "2024-12-21 13:52:15"
+    },
+    {
+        "saleID": "S26",
+        "username": "nino_tb",
+        "gameID": "BG102",
+        "quantity": 2,
+        "totalPrice": 60,
+        "city": "tbilisi",
+        "Date": "2025-01-07 13:52:15"
+    },
+    {
+        "saleID": "S27",
+        "username": "giorgi.kut",
+        "gameID": "BG114",
+        "quantity": 2,
+        "totalPrice": 70,
         "city": "kutaisi",
-        "Date": "2025-01-13 17:24:41"
+        "Date": "2025-01-11 13:52:15"
+    },
+    {
+        "saleID": "S28",
+        "username": "ninidabru",
+        "gameID": "BG109",
+        "quantity": 2,
+        "totalPrice": 100,
+        "city": "tbilisi",
+        "Date": "2024-12-18 13:52:15"
+    },
+    {
+        "saleID": "S29",
+        "username": "laura",
+        "gameID": "BG118",
+        "quantity": 1,
+        "totalPrice": 25,
+        "city": "ozurgeti",
+        "Date": "2024-12-29 13:52:15"
+    },
+    {
+        "saleID": "S30",
+        "username": "lebo.oz",
+        "gameID": "BG113",
+        "quantity": 3,
+        "totalPrice": 210,
+        "city": "ozurgeti",
+        "Date": "2025-01-13 13:52:15"
+    },
+    {
+        "saleID": "S31",
+        "username": "salome_tbs",
+        "gameID": "BG101",
+        "quantity": 3,
+        "totalPrice": 105,
+        "city": "tbilisi",
+        "Date": "2025-01-13 13:52:15"
+    },
+    {
+        "saleID": "S39",
+        "username": "david_smith",
+        "gameID": "BG103",
+        "quantity": 2,
+        "totalPrice": 50,
+        "city": "tbilisi",
+        "Date": "2025-01-10 12:30:45"
+    },
+    {
+        "saleID": "S40",
+        "username": "georgek",
+        "gameID": "BG105",
+        "quantity": 1,
+        "totalPrice": 120,
+        "city": "batumi",
+        "Date": "2025-01-10 15:02:35"
+    },
+    {
+        "saleID": "S41",
+        "username": "elia_daniel",
+        "gameID": "BG108",
+        "quantity": 2,
+        "totalPrice": 90,
+        "city": "kutaisi",
+        "Date": "2025-01-11 16:45:10"
+    },
+    {
+        "saleID": "S42",
+        "username": "maria_01",
+        "gameID": "BG107",
+        "quantity": 1,
+        "totalPrice": 28,
+        "city": "tbilisi",
+        "Date": "2025-01-11 19:25:00"
+    },
+    {
+        "saleID": "S43",
+        "username": "khatuna",
+        "gameID": "BG116",
+        "quantity": 5,
+        "totalPrice": 90,
+        "city": "gori",
+        "Date": "2025-01-12 11:15:22"
+    },
+    {
+        "saleID": "S44",
+        "username": "ivan.georgi",
+        "gameID": "BG106",
+        "quantity": 2,
+        "totalPrice": 70,
+        "city": "batumi",
+        "Date": "2025-01-12 13:55:45"
+    },
+    {
+        "saleID": "S45",
+        "username": "giuli",
+        "gameID": "BG109",
+        "quantity": 1,
+        "totalPrice": 50,
+        "city": "tbilisi",
+        "Date": "2025-01-13 10:05:33"
+    },
+    {
+        "saleID": "S46",
+        "username": "salome_tvl",
+        "gameID": "BG113",
+        "quantity": 3,
+        "totalPrice": 210,
+        "city": "kutaisi",
+        "Date": "2025-01-13 12:10:11"
+    },
+    {
+        "saleID": "S47",
+        "username": "shota2023",
+        "gameID": "BG114",
+        "quantity": 1,
+        "totalPrice": 35,
+        "city": "batumi",
+        "Date": "2025-01-13 14:25:45"
+    },
+    {
+        "saleID": "S48",
+        "username": "rati_dav",
+        "gameID": "BG111",
+        "quantity": 2,
+        "totalPrice": 110,
+        "city": "gori",
+        "Date": "2025-01-13 15:30:10"
+    },
+    {
+        "saleID": "S49",
+        "username": "leon_haba",
+        "gameID": "BG104",
+        "quantity": 1,
+        "totalPrice": 40,
+        "city": "tbilisi",
+        "Date": "2025-01-13 17:45:30"
+    },
+    {
+        "saleID": "S43",
+        "username": "mamuka",
+        "gameID": "BG115",
+        "quantity": 2,
+        "totalPrice": 40,
+        "city": "tbilisi",
+        "Date": "2025-01-13 18:38:53"
     }
 ]
