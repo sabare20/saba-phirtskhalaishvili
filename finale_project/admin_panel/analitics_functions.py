@@ -16,14 +16,12 @@ class JSONReader:
             return json.load(file)
 
 
-# Instantiate the JSONReader
 reader = JSONReader(
     "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/customers_data.json",
     "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/sales_data.json"
 )
 
 
-# Updated functions to use JSONReader
 def calculate_average_age():
     data = reader.read_customers()
 
@@ -73,7 +71,7 @@ def city_distribution():
         if city:
             city_count[city] = city_count.get(city, 0) + 1
 
-    # Print sales in each city
+    # Print the sales in each city
     print("Sales in each city:")
     for city, count in city_count.items():
         print(f"\t-{city.capitalize()}: {count} sales")

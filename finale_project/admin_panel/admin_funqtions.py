@@ -24,7 +24,8 @@ if os.path.exists(customers_file):
         customers = json.load(file)
 else:
     customers = []
-  
+
+
 def board_games_list():
     board_game_list = []
     for game in board_games :
@@ -40,14 +41,14 @@ def fill_stocks():
         if input_board_game not in board_games_list:
             print()
     
-    
-    
 
 def remove_board_game():
     print('enter games name which you want to remove :')
 
+
 def add_admins():
     print('enter admins name which you want to add .')
+
 
 def remove_admins():
     print('enter admins name which  u want to remove .')
