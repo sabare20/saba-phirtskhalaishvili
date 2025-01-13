@@ -146,5 +146,13 @@
         "quantity": 5,
         "totalPrice": 175,
         "city": "kutaisi"
+    },
+    {
+        "saleID": "S22",
+        "username": "chaxva",
+        "gameID": "BG120",
+        "quantity": 2,
+        "totalPrice": 170,
+        "city": "kutaisi"
     }
 ]

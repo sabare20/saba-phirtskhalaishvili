@@ -365,7 +365,8 @@ def purchase_game():
                 "username": customer["username"],
                 "gameID": item["gameID"],
                 "quantity": item["quantity"],
-                "totalPrice": item["price"] * item["quantity"]
+                "totalPrice": item["price"] * item["quantity"],
+                "city": customer["city"]
             })
 
         # Save changes to the board games and sales
