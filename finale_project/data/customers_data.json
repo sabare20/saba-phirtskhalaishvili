@@ -38,5 +38,15 @@
         "city": "ozurgeti",
         "age": 53,
         "gender": "female"
+    },
+    {
+        "customerID": "C5",
+        "username": "dato",
+        "password": "daviti123",
+        "name": "daviti",
+        "email": "davitdavitaia@gmail.com",
+        "city": "zugdidi",
+        "age": 19,
+        "gender": "male"
     }
 ]

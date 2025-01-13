@@ -39,7 +39,7 @@
         "gameID": "BG107",
         "name": "Splendor",
         "price": 28,
-        "stock": 90
+        "stock": 88
     },
     {
         "gameID": "BG108",
@@ -69,7 +69,7 @@
         "gameID": "BG112",
         "name": "Dixit",
         "price": 30,
-        "stock": 83
+        "stock": 82
     },
     {
         "gameID": "BG113",
@@ -99,7 +99,7 @@
         "gameID": "BG117",
         "name": "Root",
         "price": 70,
-        "stock": 29
+        "stock": 28
     },
     {
         "gameID": "BG118",
