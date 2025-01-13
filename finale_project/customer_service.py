@@ -52,27 +52,83 @@ def show_board_games():
 # Function to handle customer registration
 def register_customer():
     print("Please register by filling in your details.")
-    username = input("Enter a username: ")
-    if any(c["username"] == username for c in customers):
-        print("This username is already taken. Please try a different one.")
-        return register_customer()
+    while True:
+        username = input("Enter a username (at least 4 characters, no spaces): ")
+        if len(username) < 4 or ' ' in username:
+            print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
+        elif any(c["username"] == username for c in customers):
+            print("This username is already taken. Please try a different one.")
+        else:
+             print("Username saved successfully.")
+             break
 
-    password = input("Enter a password: ")
-    name = input("Enter your name: ")
-    email = input("Enter your email address: ")
-    if any(c["email"] == email for c in customers):
-        print("This email is already registered. Please use a different email.")
-        return register_customer()
+    while True:
+        password = input("Enter a password: ")
+        if password.startswith(' '):
+            print("Invalid password. Please ensure it does not start with a space.")
+        else:
+            print("Password saved successfully.")
+            break
 
-    city = input("Enter your city: ")
-    age = int(input("Enter your age: "))
-    gender = input("Enter your gender (Male/Female): ")
+    while True:
+        name = input("Enter your name: ")
+        if any(char.isdigit() for char in name):
+            print("Name should not contain numbers.")
+        elif name.startswith(' '):
+            print("Name should not start with a space.")
+        elif not name.strip():
+            print("Name should contain at least 1 character.")
+        else:
+            print("Name saved successfully.")
+            break
 
-    # Automatically generate a unique customer ID
-    customer_id = f"C{len(customers) + 1}"  # Format as CUST0001, CUST0002, etc.
+    while True:
+        email = input("Enter your email address: ")
+        if any(c["email"] == email for c in customers):
+            print("This email is already registered. Please use a different email.")
+        elif not email.strip():
+            print("Email field should not be empty.")
+        elif '@' not in email or '.' not in email.split('@')[-1]:
+            print("Invalid email. Email must contain '@' and a valid domain (e.g., '.com').")
+        else:
+            print("Email saved successfully.")
+            break
+
+    while True:
+        city = input("Enter your city: ")
+        if city.startswith(' '):
+            print("City should not start with a space.")
+        elif not city.strip():
+            print("City field should not be empty.")
+        else:
+            print("City saved successfully.")
+            break
+    while True:
+        try:
+            age_input = input("Enter your age: ").strip()
+            if not age_input:
+                print("Age field should not be empty.")
+                continue
+            age = int(age_input)
+            if age < 16:
+                print("You must be at least 16 years old to be registered.")
+            else:
+                print("Age saved successfully.")
+                break
+        except ValueError:
+            print("Age must be a valid number, not other characters.")
+
+    while True:
+        gender = input("Enter your gender (Male/Female): ").strip().capitalize()
+        if gender not in ["Male", "Female"]:
+            print("Gender should be 'Male' or 'Female'.")
+        elif not gender:
+            print("Gender field should not be empty.")
+        else:
+            print("Gender saved successfully.")
+            break
 
     new_customer = {
-        "customerID": customer_id,
         "username": username,
         "password": password,
         "name": name,
@@ -86,11 +142,35 @@ def register_customer():
     print(f"Registration complete! Welcome, {name}.")
     return new_customer
 
-
 # Function to handle customer login
 def login_customer():
-    username = input("Enter your username: ")
-    password = input("Enter your password: ")
+    while True:
+        username = input("Enter your username: ")
+        if len(username) < 4 or ' ' in username:
+            print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
+        elif not any(c["username"] == username for c in customers):
+            print("Username not found.")
+            choice = input("Would you like to try again or register? (try/register): ").lower()
+            if choice == "register":
+                return register_customer()
+            elif choice == "try":
+                continue
+            else:
+                print("Invalid choice. Please try again.")
+                continue
+        else:
+            print("Username entered successfully.")
+            break
+    while True:
+        password = input("Enter your password: ")
+        if password.startswith(' '):
+            print("Invalid password. Please ensure it does not start with a space.")
+        elif not any(c["password"] == password for c in customers if c["username"] == username):
+            print("Invalid password. Please try again.")
+        else:
+            print("Password entered successfully.")
+            break
+
     customer = next((c for c in customers if c["username"] == username and c["password"] == password), None)
     if not customer:
         print("Invalid username or password. If you don't have an account, please register.")
@@ -279,6 +359,3 @@ def purchase_game():
 # Main program execution
 purchase_game()
 
-
-# Main program execution
-purchase_game()
