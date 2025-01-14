@@ -385,5 +385,104 @@
         "totalPrice": 40,
         "city": "tbilisi",
         "Date": "2025-01-13 18:38:53"
+    },
+    {
+        "saleID": "S44",
+        "username": "guest",
+        "gameID": "BG107",
+        "quantity": 1,
+        "totalPrice": 28,
+        "city": "",
+        "Date": "2025-01-14 11:40:33"
+    },
+    {
+        "saleID": "S45",
+        "username": "guest",
+        "gameID": "BG104",
+        "quantity": 1,
+        "totalPrice": 40,
+        "city": "",
+        "Date": "2025-01-14 11:40:33"
+    },
+    {
+        "saleID": "S46",
+        "username": "guest",
+        "gameID": "BG120",
+        "quantity": 1,
+        "totalPrice": 85,
+        "city": "",
+        "Date": "2025-01-14 11:50:45"
+    },
+    {
+        "saleID": "S47",
+        "username": "guest",
+        "gameID": "BG120",
+        "quantity": 1,
+        "totalPrice": 85,
+        "city": "",
+        "Date": "2025-01-14 12:17:23"
+    },
+    {
+        "saleID": "S48",
+        "username": "ninidabru",
+        "gameID": "BG120",
+        "quantity": 1,
+        "totalPrice": 85,
+        "city": "tbilisi",
+        "Date": "2025-01-14 12:47:30"
+    },
+    {
+        "saleID": "S49",
+        "username": "ninidabru",
+        "gameID": "BG117",
+        "quantity": 1,
+        "totalPrice": 70,
+        "city": "tbilisi",
+        "Date": "2025-01-14 12:47:30"
+    },
+    {
+        "saleID": "S50",
+        "username": "chaxva",
+        "gameID": "BG120",
+        "quantity": 1,
+        "totalPrice": 85,
+        "city": "kutaisi",
+        "Date": "2025-01-14 13:07:19"
+    },
+    {
+        "saleID": "S51",
+        "username": "chaxva",
+        "gameID": "BG120",
+        "quantity": 1,
+        "totalPrice": 85,
+        "city": "kutaisi",
+        "Date": "2025-01-14 13:17:12"
+    },
+    {
+        "saleID": "S52",
+        "username": "chaxva",
+        "gameID": "BG118",
+        "quantity": 1,
+        "totalPrice": 25,
+        "city": "kutaisi",
+        "Date": "2025-01-14 13:32:24"
+    },
+    {
+        "saleID": "S53",
+        "username": "chaxva",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35,
+        "city": "kutaisi",
+        "Date": "2025-01-14 13:52:14"
+    },
+    {
+        "saleID": "S54",
+        "username": "guest",
+        "gameID": "BG101",
+        "quantity": 1,
+        "totalPrice": 35,
+        "city": "",
+        "Date": "2025-01-14 13:53:53"
     }
 ]

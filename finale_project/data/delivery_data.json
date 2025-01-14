@@ -1,0 +1,68 @@
+[
+    {
+        "deliveryID": "D1",
+        "username": "guest",
+        "deliveryAddress": {
+            "city": "gudauri",
+            "street": "bakuriani street",
+            "houseNumber": "13"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 12:04:58"
+    },
+    {
+        "deliveryID": "D2",
+        "username": "guest",
+        "deliveryAddress": {
+            "city": "gori",
+            "street": "stalini street",
+            "houseNumber": "18"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 12:06:43"
+    },
+    {
+        "deliveryID": "D3",
+        "username": "chaxva",
+        "deliveryAddress": {
+            "city": "borjomi",
+            "street": "gudauri street",
+            "houseNumber": "23"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 12:10:07"
+    },
+    {
+        "deliveryID": "D4",
+        "username": "guest",
+        "deliveryAddress": {
+            "city": "kutaisi",
+            "street": "chexovi street",
+            "houseNumber": "18"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 12:17:12"
+    },
+    {
+        "deliveryID": "D5",
+        "username": "ninidabru",
+        "deliveryAddress": {
+            "city": "tbilisi",
+            "street": "shatberashvili",
+            "houseNumber": "3"
+        },
+        "deliveryFee": 2.0,
+        "date": "2025-01-14 12:47:19"
+    },
+    {
+        "deliveryID": "D6",
+        "username": "guest",
+        "deliveryAddress": {
+            "city": "lanchkhuti",
+            "street": "asatiani",
+            "houseNumber": "1"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 13:53:38"
+    }
+]

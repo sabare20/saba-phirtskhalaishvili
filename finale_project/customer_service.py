@@ -16,6 +16,8 @@ def save_sales():
 BOARD_GAMES_FILE = "data/board_games_data.json"
 SALES_FILE = "data/sales_data.json"
 CUSTOMERS_FILE = "data/customers_data.json"
+DELIVERY_FILE = "data/delivery_data.json"
+DONATIONS_FILE = "data/donations_data.json"
 
 # Load or initialize data
 if os.path.exists(BOARD_GAMES_FILE):
@@ -36,6 +38,17 @@ if os.path.exists(CUSTOMERS_FILE):
 else:
     customers = []
 
+if os.path.exists(DELIVERY_FILE):
+    with open(DELIVERY_FILE, "r") as file:
+        deliveries = json.load(file)
+else:
+    deliveries = []
+
+if os.path.exists(DONATIONS_FILE):
+    with open(DONATIONS_FILE, "r") as file:
+        donations = json.load(file)
+else:
+    donations = []
 
 # Save data functions
 def save_board_games():
@@ -52,6 +65,13 @@ def save_customers():
     with open(CUSTOMERS_FILE, "w") as file:
         json.dump(customers, file, indent=4)
 
+def save_deliveries():
+    with open(DELIVERY_FILE, "w") as file:
+        json.dump(deliveries, file, indent=4)
+
+def save_donations():
+    with open(DONATIONS_FILE, "w") as file:
+        json.dump(donations, file, indent=4)
 
 # Function to show available games
 def show_board_games():
@@ -210,13 +230,13 @@ def login_customer():
 # Function to display customer's purchase history
 def show_purchase_history(username):
     print("Your purchase history:")
-    purchases = [sale for sale in sales if sale["username"] == username]
+    purchases = [sale for sale in sales if sale["username"] == username and sale["username"]!="guest"]
     if not purchases:
         print("You have not purchased any items yet.")
         return
     for purchase in purchases:
         game = next(g for g in board_games if g["gameID"] == purchase["gameID"])
-        print(f"- {game['name']} (Quantity: {purchase['quantity']}, Total Price: ${purchase['totalPrice']:.2f})")
+        print(f"- {game['name']} (Quantity: {purchase['quantity']}, Total Price: ${purchase['totalPrice']:.2f}, Date: {purchase['Date']}.)")
 
 
 # Function to handle delivery
@@ -241,6 +261,15 @@ def handle_delivery(customer, total_price):
     agree_delivery = input("Do you agree to pay the delivery fee and proceed with delivery? (yes/no): ").lower()
     if agree_delivery == "yes":
         print("Delivery confirmed. Processing your payment...")
+        delivery_info = {
+            "deliveryID": f"D{len(deliveries) + 1}",
+            "username": customer["username"],
+            "deliveryAddress": {"city": city, "street": street, "houseNumber": house_number},
+            "deliveryFee": delivery_fee,
+            "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        }
+        deliveries.append(delivery_info)
+        save_deliveries()
         return total_with_delivery  # Return updated total amount with delivery fee
     else:
         print("You chose not to proceed with delivery. Please visit our shop to pick up your order.")
@@ -248,7 +277,7 @@ def handle_delivery(customer, total_price):
 
 
 # Function to process payment
-def process_payment(amount):
+def process_payment(amount,customer):
     payment_method = input("How will you pay (card/cash)? ").lower()
 
     if payment_method == "card":
@@ -274,6 +303,14 @@ def process_payment(amount):
             donate = input("Do you really want to donate extra money (yes/no)? ").lower()
             if donate == "yes":
                 print("Purchase complete. Thank you for your generosity!")
+                donation_info = {
+                    "donationID": f"D{len(donations) + 1}",
+                    "username": customer["username"],
+                    "amount": extra,
+                    "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                }
+                donations.append(donation_info)
+                save_donations()
             else:
                 print("Thank you for your payment. The exact amount has been processed.")
         else:
@@ -288,6 +325,8 @@ def select_games():
     basket = []  # Initialize an empty basket
     while True:
         show_board_games()  # Display available games
+        print("*" * 60)
+        print("*" * 60)
         game_name = input("Enter the name of the game you want to add to your basket: ")
         quantity = int(input("Enter the quantity: "))
         game = next((g for g in board_games if g["name"].lower() == game_name.lower()), None)
@@ -299,16 +338,13 @@ def select_games():
         if game["stock"] < quantity:
             print(f"Insufficient stock. Only {game['stock']} available.")
             continue
-
         # Add the selected game to the basket
         basket.append({"gameID": game["gameID"], "name": game["name"], "quantity": quantity, "price": game["price"]})
         print(f"{quantity} x {game['name']} has been added to your basket.")
-
         # Ask if the customer wants to add more games
         another_game = input("Do you want to add another game to your basket? (yes/no): ").lower()
         if another_game != "yes":
             break
-
     return basket
 
 
@@ -325,15 +361,12 @@ def purchase_game():
         try:
             if action == "register":
                 customer = register_customer()
-
             elif action == "log in":
                 customer = login_customer()
                 if not customer:
                     return  # Exit if login fails or customer doesn't register
-
             elif action == "guest":
                 customer = guest()  # Call guest() function here
-
             else:
                 raise ValueError("Invalid option. Please choose 'log in', 'register', or 'guest'.")
             break
@@ -341,13 +374,25 @@ def purchase_game():
             print(e)
 
     # Show purchase history
-    view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
-    if view_history == "yes":
-        show_purchase_history(customer["username"])
+    if action!="guest" and action!="register" and action=="log in":
+        while True:
+            view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
+            if view_history == "yes":
+                print("*" * 60)
+                show_purchase_history(customer["username"])
+                print("*" * 60)
+                print("*" * 60)
+                break
+            elif view_history == "no":
+                break
+            else:
+                print("Invalid input. Please write 'yes' or 'no'. ")
+
 
     # Let the customer select games
     basket = select_games()
-
+    print("*" * 60)
+    print("*" * 60)
     if not basket:
         print("Your basket is empty. No purchase made.")
         return
@@ -364,7 +409,7 @@ def purchase_game():
         print("Please visit our shop to pick up your order.")
 
     # Confirm payment
-    if process_payment(total_price):
+    if process_payment(total_price,customer):
         # If payment is successful, update stock and save the sale
         for item in basket:
             game = next(g for g in board_games if g["gameID"] == item["gameID"])
