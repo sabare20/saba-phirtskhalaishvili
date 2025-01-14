@@ -215,41 +215,8 @@ def remove_admins():
             print(e)
 
 
-"""
-def admin_panel():
-    print('welcome')
-    print('base data :')
-    print('\nenter 1 if you want to fill stocks ')
-    print('enter 2 if you want to add or remove admin')
-    print('enter 3 if you want to see whole data .')
-    
-    while True:
-        try:
-            entered_num_for_prompt = int(input('\nenter number 1 , 2 or 3 :'))
-            if entered_num_for_prompt == 1:
-                fill_stocks()
-            elif entered_num_for_prompt == 2:
-                print('\nenter 1 if you want to add admin ')
-                print('enter 2 if you want to remove admin ')
-                while True:
-                    try:
-                        input_num_admins_change = int(input('\nenter number 1 or 2 :'))
-                        if input_num_admins_change == 1 :
-                            add_admins()
-                        elif input_num_admins_change == 2 :
-                            remove_admins()
-                        elif input_num_admins_change not in [1,2]:
-                            raise ValueError("you must enter number 1 or 2 !")
-                        break
-                    except ValueError as er:
-                        print(er)
-            elif input_num_admins_change == 3:
-                print('ai data')
-            elif entered_num_for_prompt not in [1,2,3]:
-                raise ValueError("you must enter 1,2 or 3 !")
-        except ValueError as e:
-            print(e)
-    """
+
+
 def admin_panel():
     print("Welcome to the Admin Panel!")
     print("\nBase Data:")
