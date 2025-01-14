@@ -51,13 +51,13 @@
         "gameID": "BG109",
         "name": "Dominion",
         "price": 50,
-        "stock": 40
+        "stock": 39
     },
     {
         "gameID": "BG110",
         "name": "Wingspan",
         "price": 60,
-        "stock": 35
+        "stock": 33
     },
     {
         "gameID": "BG111",
@@ -87,7 +87,7 @@
         "gameID": "BG115",
         "name": "Codenames",
         "price": 20,
-        "stock": 95
+        "stock": 93
     },
     {
         "gameID": "BG116",

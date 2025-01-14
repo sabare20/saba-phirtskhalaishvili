@@ -64,5 +64,16 @@
         },
         "deliveryFee": 7.0,
         "date": "2025-01-14 13:53:38"
+    },
+    {
+        "deliveryID": "D7",
+        "username": "guest",
+        "deliveryAddress": {
+            "city": "tbilisi",
+            "street": "shartava",
+            "houseNumber": "12"
+        },
+        "deliveryFee": 2.0,
+        "date": "2025-01-14 14:28:16"
     }
 ]

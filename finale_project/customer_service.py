@@ -258,29 +258,31 @@ def handle_delivery(customer, total_price):
     total_with_delivery = total_price + delivery_fee
     print(f"The total amount with delivery is: ${total_with_delivery:.2f}")
 
-    agree_delivery = input("Do you agree to pay the delivery fee and proceed with delivery? (yes/no): ").lower()
-    if agree_delivery == "yes":
-        print("Delivery confirmed. Processing your payment...")
-        delivery_info = {
-            "deliveryID": f"D{len(deliveries) + 1}",
-            "username": customer["username"],
-            "deliveryAddress": {"city": city, "street": street, "houseNumber": house_number},
-            "deliveryFee": delivery_fee,
-            "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        }
-        deliveries.append(delivery_info)
-        save_deliveries()
-        return total_with_delivery  # Return updated total amount with delivery fee
-    else:
-        print("You chose not to proceed with delivery. Please visit our shop to pick up your order.")
-        return total_price  # Return original total amount without delivery fee
+    while True:  # Repeat until the user answers with 'yes' or 'no'
+        agree_delivery = input("Do you agree to pay the delivery fee and proceed with delivery? (yes/no): ").lower()
+        if agree_delivery in ["yes"]:
+            print("Delivery confirmed. Processing your payment...")
+            delivery_info = {
+                "deliveryID": f"D{len(deliveries) + 1}",
+                "username": customer["username"],
+                "deliveryAddress": {"city": city, "street": street, "houseNumber": house_number},
+                "deliveryFee": delivery_fee,
+                "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            }
+            deliveries.append(delivery_info)
+            save_deliveries()
+            return total_with_delivery  # Return updated total amount with delivery fee
+        elif agree_delivery in ["no"]:
+            print("You chose not to proceed with delivery. Please visit our shop to pick up your order.")
+            return total_price  # Return original total amount without delivery fee
+        else:
+            print("Invalid input. Please answer with 'yes' or 'no'.")  # Ask again if the input is invalid
 
 
 # Function to process payment
 def process_payment(amount, customer):
     while True:  # Loop until a valid input is given
         payment_method = input("How will you pay (card/cash)? ").lower()
-
         if payment_method == "card":
             while True:
                 card_number = input("Enter your card number: ")
@@ -294,7 +296,6 @@ def process_payment(amount, customer):
                     break
                 except ValueError:
                     print("Invalid input. Please enter a valid number.")
-
             if amount_paid < amount:
                 print("Payment failed: Insufficient amount.")
                 return False
@@ -322,15 +323,12 @@ def process_payment(amount, customer):
             else:
                 print("Purchase complete.")
             break  # Exit the loop once a valid payment method is processed
-
         elif payment_method == "cash":
             print("Please pay in cash at the shop.")
             break  # Exit the loop once "cash" is selected
-
         else:
             print("Invalid input. Please choose either 'card' or 'cash'.")  # Prompt for valid input
     return True
-
 
 # Function to handle the customer's game selection
 def select_games():
@@ -342,11 +340,9 @@ def select_games():
         game_name = input("Enter the name of the game you want to add to your basket: ")
         quantity = int(input("Enter the quantity: "))
         game = next((g for g in board_games if g["name"].lower() == game_name.lower()), None)
-
         if not game:
             print("Game not found. Please choose a valid game.")
             continue
-
         if game["stock"] < quantity:
             print(f"Insufficient stock. Only {game['stock']} available.")
             continue
@@ -354,9 +350,16 @@ def select_games():
         basket.append({"gameID": game["gameID"], "name": game["name"], "quantity": quantity, "price": game["price"]})
         print(f"{quantity} x {game['name']} has been added to your basket.")
         # Ask if the customer wants to add more games
-        another_game = input("Do you want to add another game to your basket? (yes/no): ").lower()
-        if another_game != "yes":
-            break
+        while True:  # Loop to ask for valid input
+            another_game = input("Do you want to add another game to your basket? (yes/no): ").lower()
+            if another_game == "yes":
+                break  # Exit the loop and continue adding games
+            elif another_game == "no":
+                break  # Exit the loop and stop adding games
+            else:
+                print("Invalid input. Please answer with 'yes' or 'no'.")  # Ask again if the input is invalid
+        if another_game == "no":
+            break  # Exit the loop and finish game selection
     return basket
 
 
@@ -364,7 +367,6 @@ def select_games():
 def calculate_total_price(basket):
     total_price = sum(item["price"] * item["quantity"] for item in basket)
     return total_price
-
 
 # Function to handle customer purchase
 def purchase_game():
@@ -399,7 +401,6 @@ def purchase_game():
                 break
             else:
                 print("Invalid input. Please write 'yes' or 'no'. ")
-
 
     # Let the customer select games
     basket = select_games()
