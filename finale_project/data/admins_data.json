@@ -1,0 +1,38 @@
+[
+    {
+        "admin_username": "sabare",
+        "password": "abcd1234",
+        "name": "Saba Phirtskhalaishvili",
+        "email": "phirtskho20@gmail.com",
+        "city": "batumi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "chaxvixvi",
+        "password": "12344321",
+        "name": "giorgi chakhvadze",
+        "email": "chakhvadzeg@gmail.com",
+        "city": "kutaisi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "tokine7",
+        "password": "mnucr7",
+        "name": "TornikeGoglidze",
+        "email": "tokoluka@gmail.com",
+        "city": "gldani",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "admin",
+        "password": "adminadmin123",
+        "name": "admin adminadze",
+        "email": "adminashvili@gmail.com",
+        "city": "tbilisi",
+        "age": 38,
+        "gender": "Male"
+    }
+]
