@@ -29,18 +29,47 @@ def calculate_average_age():
     data = reader.read_customers()
 
     total_age = 0
+    male_age_total = 0
+    female_age_total = 0
+    male_count = 0
+    female_count = 0
+
     customer_count = len(data)
 
     for customer in data:
         total_age += customer['age']
 
+        if customer['gender'].lower() == 'male':
+            male_age_total += customer['age']
+            male_count += 1
+        elif customer['gender'].lower() == 'female':
+            female_age_total += customer['age']
+            female_count += 1
+
     if customer_count > 0:
         average_age = total_age / customer_count
         print(f"The Average Age is: {round(average_age, 2)}")
-        return average_age
     else:
         print("No customers found")
         return "No customers found"
+
+    if male_count > 0:
+        male_average_age = male_age_total / male_count
+        print(f"The Average Age of Males is: {round(male_average_age, 2)}")
+    else:
+        print("No male customers found")
+
+    if female_count > 0:
+        female_average_age = female_age_total / female_count
+        print(f"The Average Age of Females is: {round(female_average_age, 2)}")
+    else:
+        print("No female customers found")
+
+    return {
+        "overall_average": round(average_age, 2) if customer_count > 0 else None,
+        "male_average": round(male_average_age, 2) if male_count > 0 else None,
+        "female_average": round(female_average_age, 2) if female_count > 0 else None
+    }
 
 
 def gender_distribution():
@@ -113,6 +142,8 @@ def calculate_and_visualize_revenue():
     revenue_by_city = {}
     for sale in sales_data:
         city = sale["city"]
+        if city == "":
+            city = "guests"
         revenue = sale["totalPrice"]
         if city in revenue_by_city:
             revenue_by_city[city] += revenue

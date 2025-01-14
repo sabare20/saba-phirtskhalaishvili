@@ -2,10 +2,12 @@ import json
 import os
 from datetime import datetime
 
+
 def datetime_serializer(obj):
     if isinstance(obj, datetime):
         return obj.strftime('%Y-%m-%d %H:%M:%S')
     raise TypeError(f'Type {obj.__class__.__name__} not serializable')
+
 
 # Then when saving sales, use the custom serializer:
 def save_sales():
@@ -50,6 +52,7 @@ if os.path.exists(DONATIONS_FILE):
 else:
     donations = []
 
+
 # Save data functions
 def save_board_games():
     with open(BOARD_GAMES_FILE, "w") as file:
@@ -65,13 +68,16 @@ def save_customers():
     with open(CUSTOMERS_FILE, "w") as file:
         json.dump(customers, file, indent=4)
 
+
 def save_deliveries():
     with open(DELIVERY_FILE, "w") as file:
         json.dump(deliveries, file, indent=4)
 
+
 def save_donations():
     with open(DONATIONS_FILE, "w") as file:
         json.dump(donations, file, indent=4)
+
 
 # Function to show available games
 def show_board_games():
@@ -330,6 +336,7 @@ def process_payment(amount, customer):
             print("Invalid input. Please choose either 'card' or 'cash'.")  # Prompt for valid input
     return True
 
+
 # Function to handle the customer's game selection
 def select_games():
     basket = []  # Initialize an empty basket
@@ -367,6 +374,7 @@ def select_games():
 def calculate_total_price(basket):
     total_price = sum(item["price"] * item["quantity"] for item in basket)
     return total_price
+
 
 # Function to handle customer purchase
 def purchase_game():
@@ -449,4 +457,3 @@ def purchase_game():
 
 # Main program execution
 purchase_game()
-
