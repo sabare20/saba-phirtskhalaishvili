@@ -277,46 +277,58 @@ def handle_delivery(customer, total_price):
 
 
 # Function to process payment
-def process_payment(amount,customer):
-    payment_method = input("How will you pay (card/cash)? ").lower()
+def process_payment(amount, customer):
+    while True:  # Loop until a valid input is given
+        payment_method = input("How will you pay (card/cash)? ").lower()
 
-    if payment_method == "card":
-        while True:
-            card_number = input("Enter your card number: ")
-            if card_number.isdigit() and len(card_number) == 8:
-                break
-            else:
-                print("Invalid input. Please enter an 8-digit number.")
-        while True:
-            try:
-                amount_paid = float(input("Enter the amount to pay: "))
-                break
-            except ValueError:
-                print("Invalid input. Please enter a valid number.")
+        if payment_method == "card":
+            while True:
+                card_number = input("Enter your card number: ")
+                if card_number.isdigit() and len(card_number) == 8:
+                    break
+                else:
+                    print("Invalid input. Please enter an 8-digit number.")
+            while True:
+                try:
+                    amount_paid = float(input("Enter the amount to pay: "))
+                    break
+                except ValueError:
+                    print("Invalid input. Please enter a valid number.")
 
-        if amount_paid < amount:
-            print("Payment failed: Insufficient amount.")
-            return False
-        elif amount_paid > amount:
-            extra = amount_paid - amount
-            print(f"The game costs ${amount:.2f}. You are paying an extra ${extra:.2f}.")
-            donate = input("Do you really want to donate extra money (yes/no)? ").lower()
-            if donate == "yes":
-                print("Purchase complete. Thank you for your generosity!")
-                donation_info = {
-                    "donationID": f"D{len(donations) + 1}",
-                    "username": customer["username"],
-                    "amount": extra,
-                    "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                }
-                donations.append(donation_info)
-                save_donations()
+            if amount_paid < amount:
+                print("Payment failed: Insufficient amount.")
+                return False
+            elif amount_paid > amount:
+                extra = amount_paid - amount
+                print(f"The game costs ${amount:.2f}. You are paying an extra ${extra:.2f}.")
+                while True:  # Keep asking until a valid response is entered
+                    donate = input("Do you really want to donate extra money (yes/no)? ").lower()
+                    if donate == "yes":
+                        print("Purchase complete. Thank you for your generosity!")
+                        donation_info = {
+                            "donationID": f"D{len(donations) + 1}",
+                            "username": customer["username"],
+                            "amount": extra,
+                            "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                        }
+                        donations.append(donation_info)
+                        save_donations()
+                        break  # Exit the loop once donation is processed
+                    elif donate == "no":
+                        print("Thank you for your payment. The exact amount has been processed.")
+                        break  # Exit the loop if the user doesn't want to donate
+                    else:
+                        print("Invalid input. Please answer with 'yes' or 'no'.")  # Keep prompting until valid response
             else:
-                print("Thank you for your payment. The exact amount has been processed.")
+                print("Purchase complete.")
+            break  # Exit the loop once a valid payment method is processed
+
+        elif payment_method == "cash":
+            print("Please pay in cash at the shop.")
+            break  # Exit the loop once "cash" is selected
+
         else:
-            print("Purchase complete.")
-    else:
-        print("Please pay in cash at the shop.")
+            print("Invalid input. Please choose either 'card' or 'cash'.")  # Prompt for valid input
     return True
 
 

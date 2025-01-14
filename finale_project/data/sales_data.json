@@ -484,5 +484,23 @@
         "totalPrice": 35,
         "city": "",
         "Date": "2025-01-14 13:53:53"
+    },
+    {
+        "saleID": "S55",
+        "username": "chaxva",
+        "gameID": "BG101",
+        "quantity": 2,
+        "totalPrice": 70,
+        "city": "kutaisi",
+        "Date": "2025-01-14 13:58:51"
+    },
+    {
+        "saleID": "S56",
+        "username": "ninidabru",
+        "gameID": "BG117",
+        "quantity": 1,
+        "totalPrice": 70,
+        "city": "tbilisi",
+        "Date": "2025-01-14 14:01:50"
     }
 ]
