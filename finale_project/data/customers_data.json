@@ -268,5 +268,14 @@
         "city": "tbilisi",
         "age": 67,
         "gender": "Male"
+    },
+    {
+        "username": "vakhtangV",
+        "password": "mefevar123",
+        "name": "vakho",
+        "email": "vakho.gorgasali123@gmail.com",
+        "city": "tbilisi",
+        "age": 24,
+        "gender": "Male"
     }
 ]

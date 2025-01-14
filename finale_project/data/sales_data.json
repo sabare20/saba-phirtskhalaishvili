@@ -547,5 +547,32 @@
         "totalPrice": 50,
         "city": "",
         "Date": "2025-01-14 14:28:40"
+    },
+    {
+        "saleID": "S62",
+        "username": "mamuka",
+        "gameID": "BG107",
+        "quantity": 2,
+        "totalPrice": 56,
+        "city": "tbilisi",
+        "Date": "2025-01-14 14:58:23"
+    },
+    {
+        "saleID": "S63",
+        "username": "mamuka",
+        "gameID": "BG101",
+        "quantity": 3,
+        "totalPrice": 105,
+        "city": "tbilisi",
+        "Date": "2025-01-14 14:58:23"
+    },
+    {
+        "saleID": "S64",
+        "username": "vakhtangV",
+        "gameID": "BG117",
+        "quantity": 5,
+        "totalPrice": 350,
+        "city": "tbilisi",
+        "Date": "2025-01-14 15:11:59"
     }
 ]
