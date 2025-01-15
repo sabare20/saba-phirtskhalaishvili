@@ -574,5 +574,14 @@
         "totalPrice": 350,
         "city": "tbilisi",
         "Date": "2025-01-14 15:11:59"
+    },
+    {
+        "saleID": "S65",
+        "username": "felixdesuza",
+        "gameID": "BG117",
+        "quantity": 1,
+        "totalPrice": 70,
+        "city": "liverpool",
+        "Date": "2025-01-14 18:57:35"
     }
 ]

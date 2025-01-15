@@ -34,5 +34,11 @@
         "username": "vakhtangV",
         "amount": 50.0,
         "date": "2025-01-14 15:11:59"
+    },
+    {
+        "donationID": "D7",
+        "username": "felixdesuza",
+        "amount": 3.0,
+        "date": "2025-01-14 18:57:35"
     }
 ]

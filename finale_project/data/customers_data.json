@@ -277,5 +277,14 @@
         "city": "tbilisi",
         "age": 24,
         "gender": "Male"
+    },
+    {
+        "username": "felixdesuza",
+        "password": "112233",
+        "name": "felix desuza",
+        "email": "felix.desuza@yandex.ru",
+        "city": "liverpool",
+        "age": 32,
+        "gender": "Male"
     }
 ]

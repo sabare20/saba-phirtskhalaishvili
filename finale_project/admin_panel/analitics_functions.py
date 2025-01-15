@@ -35,7 +35,16 @@ class JSONReader:
             return json.load(file)
 
 
-os.chdir("C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project")
+# Replace the path with your actual directory
+project_dir = r"C:/Users/HOME/PycharmProjects/saba-phirtskhalaishvili/finale_project"
+
+# Check if the directory exists
+if not os.path.exists(project_dir):
+    print(f"Error: The directory {project_dir} does not exist.")
+    exit(1)
+
+# Set the working directory
+os.chdir(project_dir)
 
 reader = JSONReader(
     "data/customers_data.json",
@@ -44,7 +53,6 @@ reader = JSONReader(
     "data/delivery_data.json",
     "data/board_games_data.json"
 )
-
 
 def calculate_average_age():
     data = reader.read_customers()

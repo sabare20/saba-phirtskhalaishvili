@@ -75,5 +75,16 @@
         },
         "deliveryFee": 2.0,
         "date": "2025-01-14 14:28:16"
+    },
+    {
+        "deliveryID": "D8",
+        "username": "felixdesuza",
+        "deliveryAddress": {
+            "city": "zugdidi",
+            "street": "jiqia",
+            "houseNumber": "1"
+        },
+        "deliveryFee": 7.0,
+        "date": "2025-01-14 18:57:02"
     }
 ]
