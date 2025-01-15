@@ -3,14 +3,16 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import os
 
 
 class JSONReader:
-    def __init__(self, customer_file_path, sales_file_path, donations_file_path, delivery_file_path):
-        self.customer_file_path = customer_file_path
-        self.sales_file_path = sales_file_path
-        self.donations_file_path = donations_file_path
-        self.delivery_file_path = delivery_file_path
+    def __init__(self, customer_file_path, sales_file_path, donations_file_path, delivery_file_path, board_games_path):
+        self.customer_file_path = os.path.join(os.getcwd(), customer_file_path)
+        self.sales_file_path = os.path.join(os.getcwd(), sales_file_path)
+        self.donations_file_path = os.path.join(os.getcwd(), donations_file_path)
+        self.delivery_file_path = os.path.join(os.getcwd(), delivery_file_path)
+        self.board_games_path = os.path.join(os.getcwd(), board_games_path)
 
     def read_customers(self):
         with open(self.customer_file_path, "r") as file:
@@ -28,12 +30,19 @@ class JSONReader:
         with open(self.delivery_file_path, "r") as file:
             return json.load(file)
 
+    def read_board_games(self):
+        with open(self.board_games_path, "r") as file:
+            return json.load(file)
+
+
+os.chdir("C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project")
 
 reader = JSONReader(
-    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/customers_data.json",
-    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/sales_data.json",
-    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/donations_data.json",
-    "C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project/data/delivery_data.json"
+    "data/customers_data.json",
+    "data/sales_data.json",
+    "data/donations_data.json",
+    "data/delivery_data.json",
+    "data/board_games_data.json"
 )
 
 
@@ -270,6 +279,95 @@ def plot_revenue_by_city():
     plt.show()
 
 
+def analyze_sold_games():
+    sales_data = reader.read_sales()
+    board_games_data = reader.read_board_games()
+
+    # Convert the data into DataFrames for easier manipulation
+    sales_df = pd.DataFrame(sales_data)
+    games_df = pd.DataFrame(board_games_data)
+
+    # Aggregate sales data to calculate the total quantity sold for each gameID
+    sales_summary = sales_df.groupby("gameID")["quantity"].sum().reset_index()
+
+    # Merge the aggregated sales data with the board games details to include game names
+    merged_data = pd.merge(sales_summary, games_df, on="gameID")
+
+    # Find the most sold game
+    most_sold_game = merged_data.loc[merged_data["quantity"].idxmax()]
+
+    plt.figure(figsize=(12, 6))
+    plt.bar(merged_data["name"], merged_data["quantity"], color="skyblue", edgecolor="black")
+    plt.title("Total Sales of Board Games", fontsize=16, weight="bold")
+    plt.xlabel("Game Names", fontsize=14)
+    plt.ylabel("Total Quantity Sold", fontsize=14)
+    plt.xticks(rotation=45, ha='right', fontsize=10)
+    plt.yticks(fontsize=12)
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.tight_layout()
+    plt.show()
+
+    most_sold_name = most_sold_game["name"]
+    most_sold_quantity = most_sold_game["quantity"]
+
+    print(f"Most Sold Game is: {most_sold_name} and Quantity Sold is: {most_sold_quantity}")
+    return most_sold_name, most_sold_quantity
+
+
+def total_generated_revenue():
+    # Calculate Total Sales Revenue
+    sales_data = reader.read_sales()
+    total_sales_revenue = sum(sale["totalPrice"] for sale in sales_data)
+    print(f"Total Sales Revenue: ${total_sales_revenue:.2f}")
+
+    # Calculate Total Delivery Revenue
+    deliveries_data = reader.read_deliveries()
+    total_delivery_revenue = sum(delivery["deliveryFee"] for delivery in deliveries_data)
+    print(f"Total Delivery Revenue: ${total_delivery_revenue:.2f}")
+
+    # Calculate Total Donations Revenue
+    donations_data = reader.read_donations()
+    total_donations_revenue = sum(donation["amount"] for donation in donations_data)
+    print(f"Total Donations Revenue: ${total_donations_revenue:.2f}")
+
+    print("-" * 3)
+    # Sum up all the revenue
+    total_revenue = total_sales_revenue + total_delivery_revenue + total_donations_revenue
+    print(f"Total Generated Revenue: ${total_revenue:.2f}")
+
+    # Prepare data for the bar chart
+    categories = ['Sales Revenue', 'Delivery Revenue', 'Donations Revenue']
+    revenues = [total_sales_revenue, total_delivery_revenue, total_donations_revenue]
+    total_revenue_bar = [total_revenue] * 1  # Total Revenue as a single bar
+
+    # Plot the bar chart
+    fig, ax = plt.subplots(figsize=(10, 6))
+    bars = ax.bar(categories, revenues, color=["skyblue", "lightgreen", "salmon"], edgecolor="black",
+                  label="Individual Revenues")
+
+    # Plot the total revenue bar (larger bar on top of individual ones)
+    total_bar = ax.bar('Total Revenue', total_revenue, color='orange', edgecolor='black', alpha=0.7)
+
+    # Add labels to individual bars
+    for bar, revenue in zip(bars, revenues):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 1, f"${revenue:.2f}", ha='center', fontsize=10)
+
+    # Add label to total revenue bar
+    ax.text(total_bar[0].get_x() + total_bar[0].get_width() / 2, total_bar[0].get_height() + 1, f"${total_revenue:.2f}",
+            ha='center', fontsize=12, fontweight='bold')
+
+    # Add title and labels
+    ax.set_title("Total Revenue Breakdown", fontsize=16, weight="bold")
+    ax.set_xlabel("Revenue Categories", fontsize=14)
+    ax.set_ylabel("Revenue ($)", fontsize=14)
+    plt.xticks(fontsize=12)
+    plt.yticks(fontsize=12)
+    plt.tight_layout()
+    plt.show()
+
+    return total_revenue
+
+
 def main():
     calculate_average_age()
     print("-" * 5)
@@ -282,6 +380,10 @@ def main():
     donations_analyze()
     print("-" * 5)
     plot_revenue_by_city()
+    print("-" * 5)
+    analyze_sold_games()
+    print("-" * 5)
+    total_generated_revenue()
 
 
 if __name__ == "__main__":
