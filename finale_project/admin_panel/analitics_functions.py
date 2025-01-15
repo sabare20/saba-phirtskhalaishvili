@@ -4,18 +4,15 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import os
-import config
 
 
 class JSONReader:
     def __init__(self, customer_file_path, sales_file_path, donations_file_path, delivery_file_path, board_games_path):
-        base_path = config.PROJECT_PATH_1
-
-        self.customer_file_path = os.path.join(base_path, "finale_project", customer_file_path)
-        self.sales_file_path = os.path.join(base_path, "finale_project", sales_file_path)
-        self.donations_file_path = os.path.join(base_path, "finale_project", donations_file_path)
-        self.delivery_file_path = os.path.join(base_path, "finale_project", delivery_file_path)
-        self.board_games_path = os.path.join(base_path, "finale_project", board_games_path)
+        self.customer_file_path = os.path.join(os.getcwd(), customer_file_path)
+        self.sales_file_path = os.path.join(os.getcwd(), sales_file_path)
+        self.donations_file_path = os.path.join(os.getcwd(), donations_file_path)
+        self.delivery_file_path = os.path.join(os.getcwd(), delivery_file_path)
+        self.board_games_path = os.path.join(os.getcwd(), board_games_path)
 
     def read_customers(self):
         with open(self.customer_file_path, "r") as file:
@@ -38,7 +35,8 @@ class JSONReader:
             return json.load(file)
 
 
-# Using relative paths
+os.chdir("C:/Users/tornike/PycharmProjects/saba-phirtskhalaishvili/finale_project")
+
 reader = JSONReader(
     "data/customers_data.json",
     "data/sales_data.json",
