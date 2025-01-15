@@ -9,7 +9,7 @@ import config
 
 class JSONReader:
     def __init__(self, customer_file_path, sales_file_path, donations_file_path, delivery_file_path, board_games_path):
-        base_path = config.PROJECT_PATH
+        base_path = config.PROJECT_PATH_1
 
         self.customer_file_path = os.path.join(base_path, "finale_project", customer_file_path)
         self.sales_file_path = os.path.join(base_path, "finale_project", sales_file_path)
