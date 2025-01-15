@@ -35,17 +35,18 @@ class JSONReader:
             return json.load(file)
 
 
-# Replace the path with your actual directory
-project_dir = r"C:/Users/HOME/PycharmProjects/saba-phirtskhalaishvili/finale_project"
+# Ask the user to input the project directory path
+project_dir = input("Please enter the full path to your project directory (e.g., C:/Users/yourname/PycharmProjects/your_project): ")
 
 # Check if the directory exists
 if not os.path.exists(project_dir):
     print(f"Error: The directory {project_dir} does not exist.")
     exit(1)
 
-# Set the working directory
+# Set the working directory to the provided path
 os.chdir(project_dir)
 
+# Create an instance of the JSONReader class with relative file paths
 reader = JSONReader(
     "data/customers_data.json",
     "data/sales_data.json",
@@ -53,6 +54,14 @@ reader = JSONReader(
     "data/delivery_data.json",
     "data/board_games_data.json"
 )
+
+# You can test reading data
+try:
+    customers_data = reader.read_customers()
+    print(customers_data)  # Example usage
+except FileNotFoundError as e:
+    print(e)
+
 
 def calculate_average_age():
     data = reader.read_customers()
