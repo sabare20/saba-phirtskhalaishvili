@@ -94,10 +94,19 @@ def fill_stocks():
             continue
         
         # Ask if the user wants to update another game's stock
-        input_another_filling_choice = input('Do you want to fill another game\'s stocks? (yes/no): ').strip().lower()
+        while True :
+            try:
+                input_another_filling_choice = input('Do you want to fill another game\'s stocks? (yes/no): ').strip().lower()
+                if input_another_filling_choice == 'no':
+                    break  
+                if input_another_filling_choice.lower() not in ['yes','no'] :
+                    raise  ValueError('error, you must enter yes or no !')
+            except ValueError as e:
+                print(e)
         if input_another_filling_choice == 'no':
             print('opperation is done')
-            break   
+            break
+        
 
 def add_admins():
     print("Please register by filling in your details.")
@@ -215,51 +224,61 @@ def remove_admins():
             print(e)
 
 
-
-
 def admin_panel():
     print("Welcome to the Admin Panel!")
     print("\nBase Data:")
-    print("1. Fill stocks")
-    print("2. Add or remove admin")
-    print("3. View all data")
-    
-    while True:
-        try:
-            # Prompt user for the main menu option
-            entered_num_for_prompt = int(input("\nEnter a number (1, 2, or 3): "))
-            
-            if entered_num_for_prompt == 1:
-                fill_stocks()  # Assuming fill_stocks() is defined elsewhere
-                break
-            elif entered_num_for_prompt == 2:
-                print("\nAdmin Management:")
-                print("1. Add admin")
-                print("2. Remove admin")
+    while True :
+        print("1. Fill stocks")
+        print("2. Add or remove admin")
+        print("3. View all data")
+        print("4. log out")
+        
+        
+        while True:
+            try:
+                # Prompt user for the main menu option
+                entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
                 
-                # Inner loop for admin management
-                while True:
-                    try:
-                        input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))
-                        
-                        if input_num_admins_change == 1:
-                            add_admins()  # Assuming add_admins() is defined elsewhere
-                            break  # Exit the admin management loop
-                        elif input_num_admins_change == 2:
-                            remove_admins()  # Assuming remove_admins() is defined elsewhere
-                            break  # Exit the admin management loop
-                        else:
-                            raise ValueError("Invalid input! Please enter 1 or 2.")
-                    except ValueError as er:
-                        print(er)
-            elif entered_num_for_prompt == 3:
-                print("Displaying all data...")
-                # Placeholder for viewing all data
-                print("Data displayed successfully!")
-                break
-            else:
-                raise ValueError("Invalid input! Please enter 1, 2, or 3.")
-        except ValueError as e:
-            print(e)
+                if entered_num_for_prompt == 1:
+                    fill_stocks()  # Assuming fill_stocks() is defined elsewhere
+                    break
+                elif entered_num_for_prompt == 2:
+                    print("\nAdmin Management:")
+                    print("1. Add admin")
+                    print("2. Remove admin")
+                    
+                    # Inner loop for admin management
+                    while True:
+                        try:
+                            input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))
+                            
+                            if input_num_admins_change == 1:
+                                add_admins()# Assuming add_admins() is defined elsewhere
+                                
+                                break  # Exit the admin management loop
+                            elif input_num_admins_change == 2:
+                                remove_admins()  # Assuming remove_admins() is defined elsewhere
+                                
+                                break  # Exit the admin management loop
+                            else:
+                                raise ValueError("Invalid input! Please enter 1 or 2.")
+                        except ValueError as er:
+                            print(er)
+                    break
+                elif entered_num_for_prompt == 3:
+                    print("Displaying all data...")
+                    # Placeholder for viewing all data
+                    print("Data displayed successfully!\n")
+                    
+                    break
+                elif entered_num_for_prompt == 4:
+                    break
+                else:
+                    raise ValueError("Invalid input! Please enter 1, 2,3 or 4.")
+            except ValueError as e:
+                print(e)
+        if entered_num_for_prompt == 4:
+            print('Log out...')
+            break
 
 admin_panel()

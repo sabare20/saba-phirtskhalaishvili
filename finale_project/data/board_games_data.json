@@ -33,7 +33,7 @@
         "gameID": "BG106",
         "name": "Azul",
         "price": 35,
-        "stock": 42
+        "stock": 45
     },
     {
         "gameID": "BG107",
@@ -51,7 +51,7 @@
         "gameID": "BG109",
         "name": "Dominion",
         "price": 50,
-        "stock": 39
+        "stock": 45
     },
     {
         "gameID": "BG110",
@@ -99,7 +99,7 @@
         "gameID": "BG117",
         "name": "Root",
         "price": 70,
-        "stock": 20
+        "stock": 30
     },
     {
         "gameID": "BG118",
@@ -117,6 +117,6 @@
         "gameID": "BG120",
         "name": "Scythe",
         "price": 85,
-        "stock": 20
+        "stock": 35
     }
 ]
