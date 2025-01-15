@@ -14,6 +14,7 @@ def save_sales():
     with open(SALES_FILE, "w") as file:
         json.dump(sales, file, indent=4, default=datetime_serializer)
 
+
 # File paths
 BOARD_GAMES_FILE = "data/board_games_data.json"
 SALES_FILE = "data/sales_data.json"

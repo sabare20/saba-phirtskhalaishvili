@@ -18,10 +18,12 @@ if os.path.exists(board_game_file):
 else:
     board_games = []
 
+
 def show_board_games():
     print("Available board games:")
     for game in board_games:
         print(f"{game['name']} (${game['price']}) - Stock: {game['stock']}")
+
 
 def board_games_list():
     board_game_list = []
@@ -29,9 +31,11 @@ def board_games_list():
         board_game_list.append(game['name'].lower())
     return board_game_list 
 
+
 def save_updated_stock():
     with open(board_game_file, "w") as file:
         json.dump(board_games, file, indent=4)
+
 
 def admins_list():
     admin_list = []
@@ -39,10 +43,12 @@ def admins_list():
         admin_list.append(admin["admin_username"].lower())
     return admins
 
+
 def show_admins():
     print("current admins :")
     for admin in admins:
         print(f"{admin['admin_username']} - (${admin['name']})")
+
 
 def save_admins():
     with open(admins_file, "w") as file:
@@ -199,6 +205,7 @@ def add_admins():
     save_admins()
     print(f"admin added successfully!")
     return new_admin
+
 
 def remove_admins():
     show_admins()
