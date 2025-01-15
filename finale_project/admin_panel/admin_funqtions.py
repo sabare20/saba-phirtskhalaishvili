@@ -1,6 +1,6 @@
 import json
 import os
-from analitics_functions import main_analitics_function
+from analytics_functions import main_analytics_function
 
 board_game_file = "finale_project/data/board_games_data.json"
 sales_file = "finale_project/data/sales_data.json"
@@ -19,9 +19,10 @@ if os.path.exists(customers_file):
 else:
     customers = []
 
+
 def customers_list():
     customer_list = []
-    for game in board_games :
+    for game in board_games:
         customer_list.append(game['name'].lower())
     return customer_list
 
@@ -41,7 +42,7 @@ def show_board_games():
 
 def board_games_list():
     board_game_list = []
-    for game in board_games :
+    for game in board_games:
         board_game_list.append(game['name'].lower())
     return board_game_list 
 
@@ -114,13 +115,13 @@ def fill_stocks():
             continue
         
         # Ask if the user wants to update another game's stock
-        while True :
+        while True:
             try:
                 input_another_filling_choice = input('Do you want to fill another game\'s stocks? (yes/no): ').strip().lower()
                 if input_another_filling_choice == 'no':
                     break  
-                if input_another_filling_choice.lower() not in ['yes','no'] :
-                    raise  ValueError('error, you must enter yes or no !')
+                if input_another_filling_choice.lower() not in ['yes','no']:
+                    raise ValueError('error, you must enter yes or no !')
             except ValueError as e:
                 print(e)
         if input_another_filling_choice == 'no':
@@ -248,13 +249,12 @@ def remove_admins():
 def admin_panel():
     print("Welcome to the Admin Panel!")
     print("\nBase Data:")
-    while True :
+    while True:
         print("1. Fill stocks")
         print("2. Add or remove admin")
         print("3. View all data")
         print("4. log out")
-        
-        
+
         while True:
             try:
                 # Prompt user for the main menu option
@@ -274,7 +274,7 @@ def admin_panel():
                             input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))
                             
                             if input_num_admins_change == 1:
-                                add_admins()# Assuming add_admins() is defined elsewhere
+                                add_admins() # Assuming add_admins() is defined elsewhere
                                 
                                 break  # Exit the admin management loop
                             elif input_num_admins_change == 2:
@@ -287,7 +287,7 @@ def admin_panel():
                             print(er)
                     break
                 elif entered_num_for_prompt == 3:
-                    main_analitics_function()
+                    main_analytics_function()
                     print("Data displayed successfully!\n")
                     
                     break
@@ -300,5 +300,6 @@ def admin_panel():
         if entered_num_for_prompt == 4:
             print('Log out...')
             break
+
 
 admin_panel()
