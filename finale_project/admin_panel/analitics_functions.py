@@ -58,7 +58,7 @@ reader = JSONReader(
 # You can test reading data
 try:
     customers_data = reader.read_customers()
-    print(customers_data)  # Example usage
+     # Example usage
 except FileNotFoundError as e:
     print(e)
 
@@ -385,23 +385,59 @@ def total_generated_revenue():
     return total_revenue
 
 
-def main():
-    calculate_average_age()
-    print("-" * 5)
-    gender_distribution()
-    print("-" * 5)
-    city_distribution()
-    print("-" * 5)
-    calculate_and_visualize_revenue()
-    print("-" * 5)
-    donations_analyze()
-    print("-" * 5)
-    plot_revenue_by_city()
-    print("-" * 5)
-    analyze_sold_games()
-    print("-" * 5)
-    total_generated_revenue()
+def main_analitics_function():
+    while True :
+        print('1. Average age of customers')
+        print('2. Gender distribution')
+        print('3. Revenue by genders')
+        print('4. Sales distribution by cities')
+        print('5. Revenues')
+        print('6. Revenue by city')
+        print('7. Donations analyze')
+        print('8. Sold games')
+        print('9. GO BACK')
+        while True :
+            try :
+                input_data_number = int(input('enter number for command :'))
+                if input_data_number == 1 :
+                    calculate_average_age()
+                    print("-" * 5)
+                    break
+                elif input_data_number ==2 :
+                    gender_distribution()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 3 :
+                    total_generated_revenue()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 4 :
+                    city_distribution()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 5 :
+                    calculate_and_visualize_revenue()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 6 :
+                    plot_revenue_by_city()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 7 :
+                    donations_analyze()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 8 :
+                    analyze_sold_games()
+                    print("-" * 5)
+                    break
+                elif input_data_number == 9 :
+                    break
+                else :
+                    raise ValueError('Error,you must enter number from 1 to 9 !.Please try again .')
+            except ValueError as e :
+                print(e)
+        if input_data_number == 9 :
+            print('go back to admin panel ')
+            break
 
-
-if __name__ == "__main__":
-    main()

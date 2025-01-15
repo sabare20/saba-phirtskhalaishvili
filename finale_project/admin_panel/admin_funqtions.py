@@ -1,5 +1,6 @@
 import json
 import os
+from analitics_functions import main_analitics_function
 
 board_game_file = "finale_project/data/board_games_data.json"
 sales_file = "finale_project/data/sales_data.json"
@@ -11,6 +12,19 @@ if os.path.exists(admins_file):
         admins = json.load(file)
 else:
     admins = []
+
+if os.path.exists(customers_file):
+    with open(customers_file, "r") as file:
+        customers = json.load(file)
+else:
+    customers = []
+
+def customers_list():
+    customer_list = []
+    for game in board_games :
+        customer_list.append(game['name'].lower())
+    return customer_list
+
 
 if os.path.exists(board_game_file):
     with open(board_game_file, "r") as file:
@@ -41,7 +55,7 @@ def admins_list():
     admin_list = []
     for admin in admins:
         admin_list.append(admin["admin_username"].lower())
-    return admins
+    return admin_list
 
 
 def show_admins():
@@ -273,8 +287,7 @@ def admin_panel():
                             print(er)
                     break
                 elif entered_num_for_prompt == 3:
-                    print("Displaying all data...")
-                    # Placeholder for viewing all data
+                    main_analitics_function()
                     print("Data displayed successfully!\n")
                     
                     break
