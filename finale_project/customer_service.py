@@ -21,6 +21,12 @@ SALES_FILE = "data/sales_data.json"
 CUSTOMERS_FILE = "data/customers_data.json"
 DELIVERY_FILE = "data/delivery_data.json"
 DONATIONS_FILE = "data/donations_data.json"
+admins_file = "finale_project/data/admins_data.json"
+
+if os.path.exists(admins_file):
+    with open(admins_file, "r") as file:
+        admins = json.load(file)
+
 
 # Load or initialize data
 if os.path.exists(BOARD_GAMES_FILE):
@@ -193,7 +199,7 @@ def login_customer():
         username = input("Enter your username: ")
         if len(username) < 4 or ' ' in username:
             print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
-        elif not any(c["username"] == username for c in customers):
+        elif not any(c["username"] == username for c in customers) and not any(admin["username"] == username for admin in admins):
             print("Username not found.")
             choice = input("Would you like to try again, register, or proceed as a guest? (try/register/guest): ").lower()
             if choice == "register":
@@ -212,11 +218,12 @@ def login_customer():
         password = input("Enter your password: ")
         if password.startswith(' '):
             print("Invalid password. Please ensure it does not start with a space.")
-        elif not any(c["password"] == password for c in customers if c["username"] == username):
+        elif not any(c["password"] == password for c in customers if c["username"] == username) and not any(a["password"] == password for a in admins if a["username"] == username):
             print("Invalid password. Please try again.")
         else:
             print("Password entered successfully.")
             break
+        
 
     customer = next((c for c in customers if c["username"] == username and c["password"] == password), None)
     if not customer:
@@ -378,7 +385,8 @@ def calculate_total_price(basket):
 
 
 # Function to handle customer purchase
-def purchase_game():
+def customer_panel():
+    """
     while True:
         action = input("Do you want to log in, register, or proceed as a guest? (log in/register/guest): ").lower()
         try:
@@ -395,21 +403,21 @@ def purchase_game():
             break
         except ValueError as e:
             print(e)
-
+    """
     # Show purchase history
-    if action!="guest" and action!="register" and action=="log in":
-        while True:
-            view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
-            if view_history == "yes":
-                print("*" * 60)
-                show_purchase_history(customer["username"])
-                print("*" * 60)
-                print("*" * 60)
-                break
-            elif view_history == "no":
-                break
-            else:
-                print("Invalid input. Please write 'yes' or 'no'. ")
+    #if action!="guest" and action!="register" and action=="log in":
+    while True:
+        view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
+        if view_history == "yes":
+            print("*" * 60)
+            show_purchase_history(customer["username"])
+            print("*" * 60)
+            print("*" * 60)
+            break
+        elif view_history == "no":
+            break
+        else:
+            print("Invalid input. Please write 'yes' or 'no'. ")
 
     # Let the customer select games
     basket = select_games()
@@ -457,4 +465,4 @@ def purchase_game():
 
 
 # Main program execution
-purchase_game()
+customer_panel()

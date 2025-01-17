@@ -440,3 +440,6 @@ def main_analytics_function():
         if input_data_number == 9:
             print('go back to admin panel ')
             break
+        
+if __name__ == '__main__' :
+    main_analytics_function()
