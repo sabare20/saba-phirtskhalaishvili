@@ -2,24 +2,23 @@ import json
 import os
 from analytics_functions import main_analytics_function
 
-board_game_file = "finale_project/data/board_games_data.json"
-sales_file = "finale_project/data/sales_data.json"
-customers_file = "finale_project/data/customers_data.json"
-admins_file = "finale_project/data/admins_data.json"
+board_game_file = r"/finale_project/data/board_games_data.json"
+sales_file = r"/finale_project/data/sales_data.json"
+customers_file = r"/finale_project/data/customers_data.json"
+admins_file = r"C:\Users\HOME\PycharmProjects\saba-phirtskhalaishvili\finale_project\data\admins_data.json"
 
 if os.path.exists(admins_file):
     with open(admins_file, "r") as file:
         admins = json.load(file)
 else:
     admins = []
-print(admins)
 
 if os.path.exists(customers_file):
     with open(customers_file, "r") as file:
         customers = json.load(file)
 else:
     customers = []
-    
+
 
 def customers_list():
     customer_list = []
@@ -58,6 +57,10 @@ def admins_list():
     for admin in admins:
         admin_list.append(admin["admin_username"].lower())
     return admin_list
+def admins_password_list() :
+    admins_password_list = []
+    for admin in admins :
+        admins_password_list.append(admin["password"]).lower()
 
 
 def show_admins():
@@ -71,43 +74,48 @@ def save_admins():
         json.dump(admins, file, indent=4)
 
 
+def find_admins_password(admin_username) :
+    for admin in admins:
+        if admin["admin_username"] == admin_username :
+            return admin["password"]
+
+
 def login_admins():
     username_counter = 0
     username_found = False
-    while True:
-        username = input("Enter your username: ")
-        if len(username) < 4 or ' ' in username:
-            print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
-        elif not any(admin["username"] == username for admin in admins) :
-            print("Username not found.")
-        elif username_counter >= 10 :
-            print('entered admins username can not found . Please contact with other admins . ')
-            break
-        else:
-            print("Username entered successfully.")
+    print('Log In')
+    while True :
+        input_username = input('enter your username :')
+        if input_username in admins_list():
+            print('username has found')
             username_found = True
             break
-    if username_found == False :
-        return
-    else:
-        password_count = 0
-        password_found = False
-        while True:
+        elif input_username not in admins_list():
+            print('admin username has not found.please try again .')
+        elif username_counter >= 10 :
+            print('you already tried ten times .Please contact with other admins .')
+            break
+        username_counter += 1
+    if username_found == True:
+        password_correct = False
+        password_counter = 0
+        while True :
             password = input("Enter your password: ")
             if password.startswith(' '):
                 print("Invalid password. Please ensure it does not start with a space.")
-            elif not any(admin["password"] == password for admin in admins if admin["username"] == username) :
-                print("Invalid password. Please try again.")
-            elif password_count >= 10 :
+            elif password != find_admins_password(input_username):
+                print("password is  incorrect.")
+            elif password_counter >= 10:
                 print('entered admins username can not found . Please contact with other admins . ')
                 break
             else:
-                print("Password entered successfully.")
-                password_found = True
+                return "password is correct."
+                password_correct = True
                 break
-        if password_found == False:
-            return
-            
+    if password_correct == False :
+        return
+
+
 
 def fill_stocks():
     global board_games
@@ -286,61 +294,58 @@ def remove_admins():
 
 
 def admin_panel():
-    """
-    login_admins()
-    if login_admins:
-    """
-    print("Welcome to the Admin Panel!")
-    while True:
-        print("1. Fill stocks")
-        print("2. Add or remove admin")
-        print("3. View all data")
-        print("4. log out")
-     
+    if  login_admins():
+        print("Welcome to the Admin Panel!")
         while True:
-            try:
-                # Prompt user for the main menu option
-                entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
-                if entered_num_for_prompt == 1:
-                    fill_stocks()  # Assuming fill_stocks() is defined elsewhere
-                    break
-                elif entered_num_for_prompt == 2:
-                    print("\nAdmin Management:")
-                    print("1. Add admin")
-                    print("2. Remove admin")
-                            
-                    # Inner loop for admin management
-                    while True:
-                        try:
-                            input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))                        
-                            if input_num_admins_change == 1:
-                                add_admins() # Assuming add_admins() is defined elsewhere
-                                        
-                                break  # Exit the admin management loop
-                            elif input_num_admins_change == 2:
-                                remove_admins()  # Assuming remove_admins() is defined elsewhere
-                                        
-                                break  # Exit the admin management loop
-                            else:
-                                raise ValueError("Invalid input! Please enter 1 or 2.")
-                        except ValueError as er:
-                            print(er)
-                    break
-                elif entered_num_for_prompt == 3:
-                    main_analytics_function()
-                    print("Data displayed successfully!\n")
-                            
-                    break
-                elif entered_num_for_prompt == 4:
-                    break
-                else:
-                    raise ValueError("Invalid input! Please enter 1, 2,3 or 4.")
-            except ValueError as e:
-                print(e)
-        if entered_num_for_prompt == 4:
-            print('Log out...')
-            break
+            print("1. Fill stocks")
+            print("2. Add or remove admin")
+            print("3. View all data")
+            print("4. log out")
+
+            while True:
+                try:
+                    # Prompt user for the main menu option
+                    entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
+                    if entered_num_for_prompt == 1:
+                        fill_stocks()  # Assuming fill_stocks() is defined elsewhere
+                        break
+                    elif entered_num_for_prompt == 2:
+                        print("\nAdmin Management:")
+                        print("1. Add admin")
+                        print("2. Remove admin")
+
+                        # Inner loop for admin management
+                        while True:
+                            try:
+                                input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))
+                                if input_num_admins_change == 1:
+                                    add_admins() # Assuming add_admins() is defined elsewhere
+
+                                    break  # Exit the admin management loop
+                                elif input_num_admins_change == 2:
+                                    remove_admins()  # Assuming remove_admins() is defined elsewhere
+
+                                    break  # Exit the admin management loop
+                                else:
+                                    raise ValueError("Invalid input! Please enter 1 or 2.")
+                            except ValueError as er:
+                                print(er)
+                        break
+                    elif entered_num_for_prompt == 3:
+                        main_analytics_function()
+                        print("Data displayed successfully!\n")
+
+                        break
+                    elif entered_num_for_prompt == 4:
+                        break
+                    else:
+                        raise ValueError("Invalid input! Please enter 1, 2,3 or 4.")
+                except ValueError as e:
+                    print(e)
+            if entered_num_for_prompt == 4:
+                print('Log out...')
+                break
     
 
-#if __name__ == "__main__":
-    #admin_panel()
+if __name__ == "__main__":
+    admin_panel()

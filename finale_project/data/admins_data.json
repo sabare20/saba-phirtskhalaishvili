@@ -34,5 +34,14 @@
         "city": "batumi",
         "age": 22,
         "gender": "Male"
+    },
+    {
+        "admin_username": "mamuxazara",
+        "password": "tbcmagaria123",
+        "name": "mamuka xazaradze",
+        "email": "mamu@tbc.com",
+        "city": "anaklia",
+        "age": 58,
+        "gender": "Male"
     }
 ]
