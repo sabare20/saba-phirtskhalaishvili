@@ -12,7 +12,7 @@ if os.path.exists(admins_file):
         admins = json.load(file)
 else:
     admins = []
-
+print(admins)
 
 if os.path.exists(customers_file):
     with open(customers_file, "r") as file:
@@ -286,63 +286,61 @@ def remove_admins():
 
 
 def admin_panel():
-    
+    """
     login_admins()
     if login_admins:
-        print("Welcome to the Admin Panel!")
-        print("\nBase Data:")
+    """
+    print("Welcome to the Admin Panel!")
+    while True:
+        print("1. Fill stocks")
+        print("2. Add or remove admin")
+        print("3. View all data")
+        print("4. log out")
+     
         while True:
-            print("1. Fill stocks")
-            print("2. Add or remove admin")
-            print("3. View all data")
-            print("4. log out")
-
-            while True:
-                try:
-                    # Prompt user for the main menu option
-                    entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
-                    
-                    if entered_num_for_prompt == 1:
-                        fill_stocks()  # Assuming fill_stocks() is defined elsewhere
-                        break
-                    elif entered_num_for_prompt == 2:
-                        print("\nAdmin Management:")
-                        print("1. Add admin")
-                        print("2. Remove admin")
-                        
-                        # Inner loop for admin management
-                        while True:
-                            try:
-                                input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))
-                                
-                                if input_num_admins_change == 1:
-                                    add_admins() # Assuming add_admins() is defined elsewhere
-                                    
-                                    break  # Exit the admin management loop
-                                elif input_num_admins_change == 2:
-                                    remove_admins()  # Assuming remove_admins() is defined elsewhere
-                                    
-                                    break  # Exit the admin management loop
-                                else:
-                                    raise ValueError("Invalid input! Please enter 1 or 2.")
-                            except ValueError as er:
-                                print(er)
-                        break
-                    elif entered_num_for_prompt == 3:
-                        main_analytics_function()
-                        print("Data displayed successfully!\n")
-                        
-                        break
-                    elif entered_num_for_prompt == 4:
-                        break
-                    else:
-                        raise ValueError("Invalid input! Please enter 1, 2,3 or 4.")
-                except ValueError as e:
-                    print(e)
-            if entered_num_for_prompt == 4:
-                print('Log out...')
-                break
+            try:
+                # Prompt user for the main menu option
+                entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
+                if entered_num_for_prompt == 1:
+                    fill_stocks()  # Assuming fill_stocks() is defined elsewhere
+                    break
+                elif entered_num_for_prompt == 2:
+                    print("\nAdmin Management:")
+                    print("1. Add admin")
+                    print("2. Remove admin")
+                            
+                    # Inner loop for admin management
+                    while True:
+                        try:
+                            input_num_admins_change = int(input("\nEnter 1 to add admin or 2 to remove admin: "))                        
+                            if input_num_admins_change == 1:
+                                add_admins() # Assuming add_admins() is defined elsewhere
+                                        
+                                break  # Exit the admin management loop
+                            elif input_num_admins_change == 2:
+                                remove_admins()  # Assuming remove_admins() is defined elsewhere
+                                        
+                                break  # Exit the admin management loop
+                            else:
+                                raise ValueError("Invalid input! Please enter 1 or 2.")
+                        except ValueError as er:
+                            print(er)
+                    break
+                elif entered_num_for_prompt == 3:
+                    main_analytics_function()
+                    print("Data displayed successfully!\n")
+                            
+                    break
+                elif entered_num_for_prompt == 4:
+                    break
+                else:
+                    raise ValueError("Invalid input! Please enter 1, 2,3 or 4.")
+            except ValueError as e:
+                print(e)
+        if entered_num_for_prompt == 4:
+            print('Log out...')
+            break
     
 
-if __name__ == "__main__":
-    admin_panel()
+#if __name__ == "__main__":
+ #   admin_panel()
