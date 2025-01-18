@@ -386,7 +386,7 @@ def calculate_total_price(basket):
 
 # Function to handle customer purchase
 def customer_panel():
-    """
+    
     while True:
         action = input("Do you want to log in, register, or proceed as a guest? (log in/register/guest): ").lower()
         try:
@@ -403,21 +403,21 @@ def customer_panel():
             break
         except ValueError as e:
             print(e)
-    """
+    
     # Show purchase history
-    #if action!="guest" and action!="register" and action=="log in":
-    while True:
-        view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
-        if view_history == "yes":
-            print("*" * 60)
-            show_purchase_history(customer["username"])
-            print("*" * 60)
-            print("*" * 60)
-            break
-        elif view_history == "no":
-            break
-        else:
-            print("Invalid input. Please write 'yes' or 'no'. ")
+    if action!="guest" and action!="register" and action=="log in":
+        while True:
+            view_history = input("Do you want to view your purchase history? (yes/no): ").lower()
+            if view_history == "yes":
+                print("*" * 60)
+                show_purchase_history(customer["username"])
+                print("*" * 60)
+                print("*" * 60)
+                break
+            elif view_history == "no":
+                break
+            else:
+                print("Invalid input. Please write 'yes' or 'no'. ")
 
     # Let the customer select games
     basket = select_games()
@@ -465,4 +465,3 @@ def customer_panel():
 
 
 # Main program execution
-customer_panel()

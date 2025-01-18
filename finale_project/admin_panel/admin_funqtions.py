@@ -12,14 +12,14 @@ if os.path.exists(admins_file):
         admins = json.load(file)
 else:
     admins = []
-print(admins)
+
 
 if os.path.exists(customers_file):
     with open(customers_file, "r") as file:
         customers = json.load(file)
 else:
     customers = []
-
+    
 
 def customers_list():
     customer_list = []
@@ -344,5 +344,5 @@ def admin_panel():
                 break
     
 
-#if __name__ == "__main__":
-    #admin_panel()
+if __name__ == "__main__":
+    admin_panel()
