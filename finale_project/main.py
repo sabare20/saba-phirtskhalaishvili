@@ -4,10 +4,10 @@ from admin_funqtions import admin_panel
 
 
 def main():
-    print('enter 1 if you want to log in with admins account ')
-    print('enter 2 if you are customer ')
+    print('Enter 1 if you are customer.')
+    print('Enter 2 if you want to log in with admins account.')
     while True:
-        input_customer_or_admin = int(input('enter 1 or 2 :'))
+        input_customer_or_admin = int(input('Enter 1 or 2 :'))
         if input_customer_or_admin == 1 :
             customer_panel()
             break
