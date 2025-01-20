@@ -83,7 +83,7 @@ def find_admins_password(admin_username) :
 def login_admins():
     username_counter = 0
     username_found = False
-    print('Log In')
+    print('\nLog In')
     while username_counter < 5 :
         input_username = input('\nenter your username :')
         if input_username in admins_list():
@@ -326,9 +326,9 @@ def remove_admins():
 
 def admin_panel():
     if  login_admins():
-        print("Welcome to the Admin Panel!")
+        print("\nWelcome to the Admin Panel!")
         while True:
-            print("1. Fill stocks")
+            print("\n1. Fill stocks")
             print("2. Add or remove admin")
             print("3. View all data")
             print("4. log out")
@@ -339,6 +339,7 @@ def admin_panel():
                     entered_num_for_prompt = int(input("\nEnter a number (1, 2,3 or 4): "))
                     if entered_num_for_prompt == 1:
                         fill_stocks()  # Assuming fill_stocks() is defined elsewhere
+                        print(50*'*')
                         break
                     elif entered_num_for_prompt == 2:
                         print("\nAdmin Management:")
