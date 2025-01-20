@@ -2,10 +2,10 @@ import json
 import os
 from analytics_functions import main_analytics_function
 
-board_game_file = r"/finale_project/data/board_games_data.json"
-sales_file = r"/finale_project/data/sales_data.json"
-customers_file = r"/finale_project/data/customers_data.json"
-admins_file = r"C:\Users\HOME\PycharmProjects\saba-phirtskhalaishvili\finale_project\data\admins_data.json"
+board_game_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/board_games_data.json" #r"/finale_project/data/board_games_data.json"
+sales_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/sales_data.json" #r"/finale_project/data/sales_data.json"
+customers_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/customers_data.json" #r"/finale_project/data/customers_data.json"
+admins_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/admins_data.json"  #r"C:\Users\HOME\PycharmProjects\saba-phirtskhalaishvili\finale_project\data\admins_data.json"
 
 if os.path.exists(admins_file):
     with open(admins_file, "r") as file:
@@ -84,36 +84,67 @@ def login_admins():
     username_counter = 0
     username_found = False
     print('Log In')
-    while True :
-        input_username = input('enter your username :')
+    while username_counter < 5 :
+        input_username = input('\nenter your username :')
         if input_username in admins_list():
             print('username has found')
             username_found = True
             break
         elif input_username not in admins_list():
-            print('admin username has not found.please try again .')
-        elif username_counter >= 10 :
-            print('you already tried ten times .Please contact with other admins .')
-            break
-        username_counter += 1
+            print('admin username has not found . please try again .')
+            while True :
+                try:
+                    input_for_try_again = input('do you want try again (yes/no) ? - ')
+                    if input_for_try_again == 'no':
+                        print('exit program ...')
+                        exit(0)
+                        break
+                    elif input_for_try_again == 'yes':
+                        break
+                    else :
+                        raise ValueError('Error.you must enter yes or no !')
+                except ValueError as e :
+                    print(e)
+            username_counter += 1
+            
+        if username_counter >= 5:
+                    print("You have reached the maximum attempts. Please contact another admin.")
+                    print('exit program ...')
+                    break
+        
     if username_found == True:
-        password_correct = False
+        #password_correct = False
         password_counter = 0
-        while True :
+        while password_counter < 5 :
             password = input("Enter your password: ")
             if password.startswith(' '):
                 print("Invalid password. Please ensure it does not start with a space.")
+                
+            elif username_counter >= 5:
+                    print("You have reached the maximum attempts. Please contact another admin.")
+                    print('exit program ...')
+                    break
             elif password != find_admins_password(input_username):
                 print("password is  incorrect.")
-            elif password_counter >= 10:
-                print('entered admins username can not found . Please contact with other admins . ')
-                break
+                while True :
+                    try:
+                        input_for_try_again = input('do you want try again (yes/no) ? - ')
+                        if input_for_try_again == 'no':
+                            print('exit program ...')
+                            exit(0)    
+                        elif input_for_try_again == 'yes' :
+                            break
+                        elif input_for_try_again not in ['yes','no']:
+                            raise ValueError('Error.you must enter yes or no !')
+                    except ValueError as e :
+                        print(e)
             else:
+                #password_correct = True
                 return "password is correct."
-                password_correct = True
-                break
-    if password_correct == False :
-        return
+            password_counter += 1
+    #if password_correct == False :
+        #return
+
 
 
 
@@ -345,7 +376,7 @@ def admin_panel():
             if entered_num_for_prompt == 4:
                 print('Log out...')
                 break
-    
-
+            
+            
 if __name__ == "__main__":
     admin_panel()
