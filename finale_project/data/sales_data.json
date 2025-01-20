@@ -583,5 +583,23 @@
         "totalPrice": 70,
         "city": "liverpool",
         "Date": "2025-01-14 18:57:35"
+    },
+    {
+        "saleID": "S66",
+        "username": "guest",
+        "gameID": "BG108",
+        "quantity": 2,
+        "totalPrice": 90,
+        "city": "",
+        "Date": "2025-01-20 21:19:36"
+    },
+    {
+        "saleID": "S67",
+        "username": "guest",
+        "gameID": "BG101",
+        "quantity": 3,
+        "totalPrice": 105,
+        "city": "",
+        "Date": "2025-01-20 21:19:36"
     }
 ]

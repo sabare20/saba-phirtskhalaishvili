@@ -3,7 +3,7 @@
         "gameID": "BG101",
         "name": "Catan",
         "price": 35,
-        "stock": 104
+        "stock": 101
     },
     {
         "gameID": "BG102",
@@ -45,7 +45,7 @@
         "gameID": "BG108",
         "name": "7 Wonders",
         "price": 45,
-        "stock": 70
+        "stock": 68
     },
     {
         "gameID": "BG109",
@@ -57,7 +57,7 @@
         "gameID": "BG110",
         "name": "Wingspan",
         "price": 60,
-        "stock": 33
+        "stock": 35
     },
     {
         "gameID": "BG111",

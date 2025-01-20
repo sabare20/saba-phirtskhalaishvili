@@ -16,12 +16,12 @@ def save_sales():
 
 
 # File paths
-BOARD_GAMES_FILE = "data/board_games_data.json"
-SALES_FILE = "data/sales_data.json"
-CUSTOMERS_FILE = "data/customers_data.json"
-DELIVERY_FILE = "data/delivery_data.json"
-DONATIONS_FILE = "data/donations_data.json"
-admins_file = "finale_project/data/admins_data.json"
+BOARD_GAMES_FILE = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/board_games_data.json"#"data/board_games_data.json"
+SALES_FILE = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/sales_data.json" #"data/sales_data.json"
+CUSTOMERS_FILE =  "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/customers_data.json"#"data/customers_data.json"
+DELIVERY_FILE = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/delivery_data.json"#"data/delivery_data.json"
+DONATIONS_FILE = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/donations_data.json"#"data/donations_data.json"
+admins_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/admins_data.json"#"finale_project/data/admins_data.json"
 
 if os.path.exists(admins_file):
     with open(admins_file, "r") as file:

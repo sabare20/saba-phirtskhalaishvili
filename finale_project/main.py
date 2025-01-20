@@ -4,8 +4,8 @@ from admin_funqtions import admin_panel
 
 
 def main():
-    print('Enter 1 if you are customer.')
-    print('Enter 2 if you want to log in with admins account.')
+    print('Enter 1 if you are customern.')
+    print('Enter 2 if you are admin .')
     while True:
         input_customer_or_admin = int(input('Enter 1 or 2 :'))
         if input_customer_or_admin == 1 :
