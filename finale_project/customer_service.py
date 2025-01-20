@@ -218,7 +218,7 @@ def login_customer():
         password = input("Enter your password: ")
         if password.startswith(' '):
             print("Invalid password. Please ensure it does not start with a space.")
-        elif not any(c["password"] == password for c in customers if c["username"] == username) and not any(a["password"] == password for a in admins if a["username"] == username):
+        elif not any(c["password"] == password for c in customers if c["username"] == username):
             print("Invalid password. Please try again.")
         else:
             print("Password entered successfully.")
