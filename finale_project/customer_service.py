@@ -199,7 +199,7 @@ def login_customer():
         username = input("Enter your username: ")
         if len(username) < 4 or ' ' in username:
             print("Invalid username. Please ensure it is at least 4 characters long and contains no spaces.")
-        elif not any(c["username"] == username for c in customers) and not any(admin["username"] == username for admin in admins):
+        elif not any(c["username"] == username for c in customers):
             print("Username not found.")
             choice = input("Would you like to try again, register, or proceed as a guest? (try/register/guest): ").lower()
             if choice == "register":
