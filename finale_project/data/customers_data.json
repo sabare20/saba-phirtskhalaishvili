@@ -286,5 +286,14 @@
         "city": "liverpool",
         "age": 32,
         "gender": "Male"
+    },
+    {
+        "username": "Giomaisabtueli",
+        "password": "pythonimagaria123",
+        "name": "Luka",
+        "email": "Luka.Kitovani19@gmail.com",
+        "city": "yazbegi",
+        "age": 19,
+        "gender": "Male"
     }
 ]

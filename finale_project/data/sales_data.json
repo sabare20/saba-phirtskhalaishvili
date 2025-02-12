@@ -610,5 +610,14 @@
         "totalPrice": 35,
         "city": "kutaisi",
         "Date": "2025-01-20 23:27:09"
+    },
+    {
+        "saleID": "S69",
+        "username": "Giomaisabtueli",
+        "gameID": "BG101",
+        "quantity": 2,
+        "totalPrice": 70,
+        "city": "yazbegi",
+        "Date": "2025-02-12 12:39:16"
     }
 ]

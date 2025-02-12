@@ -35,17 +35,6 @@ class JSONReader:
             return json.load(file)
 
 
-# Ask the user to input the project directory path
-project_dir = input("Please enter the full path to your project directory (e.g., C:/Users/yourname/PycharmProjects/your_project): ")
-
-# Check if the directory exists
-if not os.path.exists(project_dir):
-    print(f"Error: The directory {project_dir} does not exist.")
-    exit(1)
-
-# Set the working directory to the provided path
-os.chdir(project_dir)
-
 # Create an instance of the JSONReader class with relative file paths
 reader = JSONReader(
     "data/customers_data.json",
@@ -58,7 +47,7 @@ reader = JSONReader(
 # You can test reading data
 try:
     customers_data = reader.read_customers()
-     # Example usage
+    # Example usage
 except FileNotFoundError as e:
     print(e)
 
@@ -440,6 +429,7 @@ def main_analytics_function():
         if input_data_number == 9:
             print('go back to admin panel ')
             break
-        
-if __name__ == '__main__' :
+
+
+if __name__ == '__main__':
     main_analytics_function()

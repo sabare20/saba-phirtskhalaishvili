@@ -2,10 +2,10 @@ import json
 import os
 from analytics_functions import main_analytics_function
 
-board_game_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/board_games_data.json" #r"/finale_project/data/board_games_data.json"
-sales_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/sales_data.json" #r"/finale_project/data/sales_data.json"
-customers_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/customers_data.json" #r"/finale_project/data/customers_data.json"
-admins_file = "C:/Users/phirt/OneDrive/სამუშაო დაფა/python.tbc/finale_project/data/admins_data.json"  #r"C:\Users\HOME\PycharmProjects\saba-phirtskhalaishvili\finale_project\data\admins_data.json"
+board_game_file = "data/board_games_data.json"
+sales_file = "data/sales_data.json"
+customers_file = "data/customers_data.json"
+admins_file = "data/admins_data.json"
 
 if os.path.exists(admins_file):
     with open(admins_file, "r") as file:
@@ -57,9 +57,11 @@ def admins_list():
     for admin in admins:
         admin_list.append(admin["admin_username"].lower())
     return admin_list
-def admins_password_list() :
+
+
+def admins_password_list():
     admins_password_list = []
-    for admin in admins :
+    for admin in admins:
         admins_password_list.append(admin["password"]).lower()
 
 
@@ -74,9 +76,9 @@ def save_admins():
         json.dump(admins, file, indent=4)
 
 
-def find_admins_password(admin_username) :
+def find_admins_password(admin_username):
     for admin in admins:
-        if admin["admin_username"] == admin_username :
+        if admin["admin_username"] == admin_username:
             return admin["password"]
 
 
