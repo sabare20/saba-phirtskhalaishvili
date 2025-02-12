@@ -1,0 +1,44 @@
+[
+    {
+        "donationID": "D1",
+        "username": "guest",
+        "amount": 8.0,
+        "date": "2025-01-14 12:17:23"
+    },
+    {
+        "donationID": "D2",
+        "username": "ninidabru",
+        "amount": 3.0,
+        "date": "2025-01-14 12:47:30"
+    },
+    {
+        "donationID": "D3",
+        "username": "guest",
+        "amount": 3.0,
+        "date": "2025-01-14 13:53:53"
+    },
+    {
+        "donationID": "D4",
+        "username": "ninidabru",
+        "amount": 5.0,
+        "date": "2025-01-14 14:01:50"
+    },
+    {
+        "donationID": "D5",
+        "username": "guest",
+        "amount": 3.0,
+        "date": "2025-01-14 14:28:40"
+    },
+    {
+        "donationID": "D6",
+        "username": "vakhtangV",
+        "amount": 50.0,
+        "date": "2025-01-14 15:11:59"
+    },
+    {
+        "donationID": "D7",
+        "username": "felixdesuza",
+        "amount": 3.0,
+        "date": "2025-01-14 18:57:35"
+    }
+]

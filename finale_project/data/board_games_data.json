@@ -1,0 +1,122 @@
+[
+    {
+        "gameID": "BG101",
+        "name": "Catan",
+        "price": 35,
+        "stock": 98
+    },
+    {
+        "gameID": "BG102",
+        "name": "Ticket to Ride",
+        "price": 30,
+        "stock": 79
+    },
+    {
+        "gameID": "BG103",
+        "name": "Carcassonne",
+        "price": 25,
+        "stock": 50
+    },
+    {
+        "gameID": "BG104",
+        "name": "Pandemic",
+        "price": 40,
+        "stock": 64
+    },
+    {
+        "gameID": "BG105",
+        "name": "Gloomhaven",
+        "price": 120,
+        "stock": 30
+    },
+    {
+        "gameID": "BG106",
+        "name": "Azul",
+        "price": 35,
+        "stock": 45
+    },
+    {
+        "gameID": "BG107",
+        "name": "Splendor",
+        "price": 28,
+        "stock": 86
+    },
+    {
+        "gameID": "BG108",
+        "name": "7 Wonders",
+        "price": 45,
+        "stock": 68
+    },
+    {
+        "gameID": "BG109",
+        "name": "Dominion",
+        "price": 50,
+        "stock": 45
+    },
+    {
+        "gameID": "BG110",
+        "name": "Wingspan",
+        "price": 60,
+        "stock": 35
+    },
+    {
+        "gameID": "BG111",
+        "name": "Betrayal at House on the Hill",
+        "price": 55,
+        "stock": 20
+    },
+    {
+        "gameID": "BG112",
+        "name": "Dixit",
+        "price": 30,
+        "stock": 80
+    },
+    {
+        "gameID": "BG113",
+        "name": "Terraforming Mars",
+        "price": 70,
+        "stock": 25
+    },
+    {
+        "gameID": "BG114",
+        "name": "King of Tokyo",
+        "price": 35,
+        "stock": 60
+    },
+    {
+        "gameID": "BG115",
+        "name": "Codenames",
+        "price": 20,
+        "stock": 93
+    },
+    {
+        "gameID": "BG116",
+        "name": "The Crew",
+        "price": 18,
+        "stock": 149
+    },
+    {
+        "gameID": "BG117",
+        "name": "Root",
+        "price": 70,
+        "stock": 30
+    },
+    {
+        "gameID": "BG118",
+        "name": "Patchwork",
+        "price": 25,
+        "stock": 48
+    },
+    {
+        "gameID": "BG119",
+        "name": "Arkham Horror",
+        "price": 65,
+        "stock": 11
+    },
+    {
+        "gameID": "BG120",
+        "name": "Scythe",
+        "price": 85,
+        "stock": 55
+    }
+]

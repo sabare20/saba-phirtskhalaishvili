@@ -1,0 +1,299 @@
+[
+    {
+        "username": "chaxva",
+        "password": "1234",
+        "name": "giorgi chakhvadze",
+        "email": "chakhvadzeg@gmail.com",
+        "city": "kutaisi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "username": "TornikeJinping",
+        "password": "chinetimagariaamerikaze123",
+        "name": "Tornike",
+        "email": "frank.tenpenny112@gmail.com",
+        "city": "tbilisi",
+        "age": 20,
+        "gender": "Male"
+    },
+    {
+        "username": "anano",
+        "password": "ananoanano",
+        "name": "anano12",
+        "email": "anano.talakhadze12@gmail.com",
+        "city": "kutaisi",
+        "age": 35,
+        "gender": "Female"
+    },
+    {
+        "username": "laura",
+        "password": "mzeqala123",
+        "name": "Laurashop",
+        "email": "laura.mzeqalishvili123@gmail.com",
+        "city": "ozurgeti",
+        "age": 53,
+        "gender": "female"
+    },
+    {
+        "username": "gogla",
+        "password": "Rightwinger123",
+        "name": "Tornike",
+        "email": "tornike.goglidze19@gmail.com",
+        "city": "tbilisi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "username": "ninidabru",
+        "password": "nininini",
+        "name": "nini dabrundashvili",
+        "email": "nini.dabru@gmail.com",
+        "city": "tbilisi",
+        "age": 20,
+        "gender": "Female"
+    },
+    {
+        "username": "zura123",
+        "password": "zurabZurab1",
+        "name": "Zurab Lomidze",
+        "email": "zura.lomidze@gmail.com",
+        "city": "gori",
+        "age": 27,
+        "gender": "male"
+    },
+    {
+        "username": "tikoBeka",
+        "password": "tikobe123",
+        "name": "Tiko Bekauri",
+        "email": "tikobeka@gmail.com",
+        "city": "mestia",
+        "age": 23,
+        "gender": "female"
+    },
+    {
+        "username": "giorgi_oni",
+        "password": "oniGio123",
+        "name": "Giorgi Abashidze",
+        "email": "gio.abashidze@gmail.com",
+        "city": "oni",
+        "age": 29,
+        "gender": "male"
+    },
+    {
+        "username": "mariamS",
+        "password": "mariaSign123",
+        "name": "Mariam Samkharadze",
+        "email": "mariam.sing@gmail.com",
+        "city": "signagi",
+        "age": 30,
+        "gender": "female"
+    },
+    {
+        "username": "davit.aqa",
+        "password": "davitAq12",
+        "name": "Davit Agashvili",
+        "email": "davit.aga@gmail.com",
+        "city": "akhaltsikhe",
+        "age": 35,
+        "gender": "male"
+    },
+    {
+        "username": "sopo_dmanisi",
+        "password": "dmanisi123",
+        "name": "Sopo Dvali",
+        "email": "sopo.dma@gmail.com",
+        "city": "dmanisi",
+        "age": 33,
+        "gender": "female"
+    },
+    {
+        "username": "nika_batu",
+        "password": "batumiNika123",
+        "name": "Nika Batoniashvili",
+        "email": "nika.batu@gmail.com",
+        "city": "batumi",
+        "age": 25,
+        "gender": "male"
+    },
+    {
+        "username": "ana.gor",
+        "password": "goriAna123",
+        "name": "Ana Goradze",
+        "email": "ana.gor@gmail.com",
+        "city": "gori",
+        "age": 28,
+        "gender": "female"
+    },
+    {
+        "username": "nino_tb",
+        "password": "tbilisiNino123",
+        "name": "Nino Tsiklauri",
+        "email": "nino.tsik@gmail.com",
+        "city": "tbilisi",
+        "age": 24,
+        "gender": "female"
+    },
+    {
+        "username": "giorgi.kut",
+        "password": "kutaisiGio123",
+        "name": "Giorgi Chkhaidze",
+        "email": "gio.chkha@gmail.com",
+        "city": "kutaisi",
+        "age": 31,
+        "gender": "male"
+    },
+    {
+        "username": "maia.mest",
+        "password": "mestiaMaia123",
+        "name": "Maia Chkonia",
+        "email": "maia.chkonia@gmail.com",
+        "city": "mestia",
+        "age": 42,
+        "gender": "female"
+    },
+    {
+        "username": "lebo.oz",
+        "password": "ozuLebo123",
+        "name": "Levan Bekauri",
+        "email": "lebo.beka@gmail.com",
+        "city": "ozurgeti",
+        "age": 40,
+        "gender": "male"
+    },
+    {
+        "username": "tamta.d",
+        "password": "dmanisiTamta123",
+        "name": "Tamta Dumbadze",
+        "email": "tamta.duma@gmail.com",
+        "city": "dmanisi",
+        "age": 22,
+        "gender": "female"
+    },
+    {
+        "username": "giga_axa",
+        "password": "axalqalaqiGiga123",
+        "name": "Giga Amiranashvili",
+        "email": "giga.ami@gmail.com",
+        "city": "akhaltsikhe",
+        "age": 29,
+        "gender": "male"
+    },
+    {
+        "username": "salome_tbs",
+        "password": "salomeTb123",
+        "name": "Salome Tsereteli",
+        "email": "salome.tse@gmail.com",
+        "city": "tbilisi",
+        "age": 32,
+        "gender": "female"
+    },
+    {
+        "username": "lasha.kut",
+        "password": "lashaKut123",
+        "name": "Lasha Eristavi",
+        "email": "lasha.eri@gmail.com",
+        "city": "kutaisi",
+        "age": 27,
+        "gender": "male"
+    },
+    {
+        "username": "giorgi_b",
+        "password": "batumiGiorgi123",
+        "name": "Giorgi Kobalia",
+        "email": "giorgi.koba@gmail.com",
+        "city": "batumi",
+        "age": 25,
+        "gender": "male"
+    },
+    {
+        "username": "eka_tbi",
+        "password": "ekaTb123",
+        "name": "Eka Chanturia",
+        "email": "eka.chan@gmail.com",
+        "city": "tbilisi",
+        "age": 38,
+        "gender": "female"
+    },
+    {
+        "username": "vaxo.sig",
+        "password": "signagiVaxo123",
+        "name": "Vakhtang Shengelia",
+        "email": "vaxo.shen@gmail.com",
+        "city": "signagi",
+        "age": 31,
+        "gender": "male"
+    },
+    {
+        "username": "mzia_oni",
+        "password": "oniMzia123",
+        "name": "Mzia Okruashvili",
+        "email": "mzia.okru@gmail.com",
+        "city": "oni",
+        "age": 49,
+        "gender": "female"
+    },
+    {
+        "username": "lala.axa",
+        "password": "lalaAxal123",
+        "name": "Lali Gurgenidze",
+        "email": "lala.gurgen@gmail.com",
+        "city": "akhaltsikhe",
+        "age": 34,
+        "gender": "female"
+    },
+    {
+        "username": "nina_gori",
+        "password": "goriNina123",
+        "name": "Nino Topuria",
+        "email": "nina.top@gmail.com",
+        "city": "gori",
+        "age": 26,
+        "gender": "female"
+    },
+    {
+        "username": "mari_t",
+        "password": "tbilisiMari123",
+        "name": "Mari Kapanadze",
+        "email": "mari.kapa@gmail.com",
+        "city": "tbilisi",
+        "age": 30,
+        "gender": "female"
+    },
+    {
+        "username": "mamuka",
+        "password": "mamuka123",
+        "name": "mamukamyidveli",
+        "email": "mamuka.mushkuda123@gmail.com",
+        "city": "tbilisi",
+        "age": 67,
+        "gender": "Male"
+    },
+    {
+        "username": "vakhtangV",
+        "password": "mefevar123",
+        "name": "vakho",
+        "email": "vakho.gorgasali123@gmail.com",
+        "city": "tbilisi",
+        "age": 24,
+        "gender": "Male"
+    },
+    {
+        "username": "felixdesuza",
+        "password": "112233",
+        "name": "felix desuza",
+        "email": "felix.desuza@yandex.ru",
+        "city": "liverpool",
+        "age": 32,
+        "gender": "Male"
+    },
+    {
+        "username": "Giomaisabtueli",
+        "password": "pythonimagaria123",
+        "name": "Luka",
+        "email": "Luka.Kitovani19@gmail.com",
+        "city": "yazbegi",
+        "age": 19,
+        "gender": "Male"
+    }
+]
