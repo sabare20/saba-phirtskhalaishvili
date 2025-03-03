@@ -173,6 +173,7 @@ def register_customer():
             break
 
     new_customer = {
+        "customerID": len(customers) + 1,
         "username": username,
         "password": password,
         "name": name,
@@ -277,8 +278,8 @@ def handle_delivery(customer, total_price):
         if agree_delivery in ["yes"]:
             print("Delivery confirmed. Processing your payment...")
             delivery_info = {
-                "deliveryID": f"D{len(deliveries) + 1}",
-                "username": customer["username"],
+                "deliveryID": len(deliveries) + 1,
+                "customerID": customer["customerID"],
                 "deliveryAddress": {"city": city, "street": street, "houseNumber": house_number},
                 "deliveryFee": delivery_fee,
                 "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -321,8 +322,8 @@ def process_payment(amount, customer):
                     if donate == "yes":
                         print("Purchase complete. Thank you for your generosity!")
                         donation_info = {
-                            "donationID": f"D{len(donations) + 1}",
-                            "username": customer["username"],
+                            "donationID": len(donations) + 1,
+                            "customerID": customer["customerID"],
                             "amount": extra,
                             "date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                         }
@@ -447,13 +448,13 @@ def customer_panel():
 
             # Add the sale to the sales list
             sales.append({
-                "saleID": f"S{len(sales) + 1}",
-                "username": customer["username"],
+                "saleID": len(sales) + 1,
+                "customerID": customer["customerID"],
                 "gameID": item["gameID"],
                 "quantity": item["quantity"],
                 "totalPrice": item["price"] * item["quantity"],
-                "city": customer["city"],
-                "Date": datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                "Date": datetime.now().strftime('%Y-%m-%d'),
+                "time": datetime.now().strftime('%H:%M:%S')
             })
 
         # Save changes to the board games and sales

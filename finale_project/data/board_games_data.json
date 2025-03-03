@@ -1,122 +1,156 @@
 [
     {
-        "gameID": "BG101",
+        "gameID": 1,
         "name": "Catan",
         "price": 35,
-        "stock": 98
+        "stock": 97,
+        "genreID":1
     },
     {
-        "gameID": "BG102",
+        "gameID": 2,
         "name": "Ticket to Ride",
         "price": 30,
-        "stock": 79
+        "stock": 79,
+        "genreID":1
     },
     {
-        "gameID": "BG103",
+        "gameID": 3,
         "name": "Carcassonne",
         "price": 25,
-        "stock": 50
+        "stock": 50,
+        "genreID":1
     },
     {
-        "gameID": "BG104",
+        "gameID": 4,
         "name": "Pandemic",
         "price": 40,
-        "stock": 64
+        "stock": 64,
+        "genreID":4
     },
     {
-        "gameID": "BG105",
+        "gameID": 5,
         "name": "Gloomhaven",
         "price": 120,
-        "stock": 30
+        "stock": 30,
+        "genreID":1
     },
     {
-        "gameID": "BG106",
+        "gameID": 6,
         "name": "Azul",
         "price": 35,
-        "stock": 45
+        "stock": 45,
+        "genreID":1
     },
     {
-        "gameID": "BG107",
+        "gameID": 7,
         "name": "Splendor",
         "price": 28,
-        "stock": 86
+        "stock": 86,
+        "genreID":3
     },
     {
-        "gameID": "BG108",
+        "gameID": 8,
         "name": "7 Wonders",
         "price": 45,
-        "stock": 68
+        "stock": 68,
+        "genreID":3
     },
     {
-        "gameID": "BG109",
+        "gameID": 9,
         "name": "Dominion",
         "price": 50,
-        "stock": 45
+        "stock": 45,
+        "genreID":1
     },
     {
-        "gameID": "BG110",
+        "gameID": 10,
         "name": "Wingspan",
         "price": 60,
-        "stock": 35
+        "stock": 35,
+        "genreID":1
     },
     {
-        "gameID": "BG111",
+        "gameID": 11,
         "name": "Betrayal at House on the Hill",
         "price": 55,
-        "stock": 20
+        "stock": 20,
+        "genreID":4
     },
     {
-        "gameID": "BG112",
+        "gameID": 12,
         "name": "Dixit",
         "price": 30,
-        "stock": 80
+        "stock": 80,
+        "genreID":3
     },
     {
-        "gameID": "BG113",
+        "gameID": 13,
         "name": "Terraforming Mars",
         "price": 70,
-        "stock": 25
+        "stock": 25,
+        "genreID":1
     },
     {
-        "gameID": "BG114",
+        "gameID": 14,
         "name": "King of Tokyo",
         "price": 35,
-        "stock": 60
+        "stock": 60,
+        "genreID":1
     },
     {
-        "gameID": "BG115",
+        "gameID": 15,
         "name": "Codenames",
         "price": 20,
-        "stock": 93
+        "stock": 92,
+        "genreID":3
     },
     {
-        "gameID": "BG116",
+        "gameID": 16,
         "name": "The Crew",
         "price": 18,
-        "stock": 149
+        "stock": 148,
+        "genreID":4
     },
     {
-        "gameID": "BG117",
+        "gameID": 17,
         "name": "Root",
         "price": 70,
-        "stock": 30
+        "stock": 30,
+        "genreID":1
     },
     {
-        "gameID": "BG118",
+        "gameID": 18,
         "name": "Patchwork",
         "price": 25,
-        "stock": 48
+        "stock": 48,
+        "genreID":1
     },
     {
-        "gameID": "BG119",
+        "gameID": 19,
         "name": "Arkham Horror",
         "price": 65,
-        "stock": 11
+        "stock": 11,
+        "genreID":4
     },
     {
-        "gameID": "BG120",
-        "name": "Scythe",
-        "price": 85,
-        "stock": 55
+        "gameID": 21,
+        "name": "Monopoly",
+        "price": 80,
+        "stock": 48,
+        "genreID":3
+    },
+    {
+        "gameID": 22,
+        "name": "Uno",
+        "price": 5,
+        "stock": 300,
+        "genreID":3
+    },
+    {
+        "gameID": 23,
+        "name": "Standard playing card deck",
+        "price": 5,
+        "stock": 400,
+        "genreID":5
     }
 ]
