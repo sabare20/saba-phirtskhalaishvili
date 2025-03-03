@@ -1,0 +1,47 @@
+[
+    {
+        "admin_username": "sabare",
+        "password": "abcd1234",
+        "name": "Saba Phirtskhalaishvili",
+        "email": "phirtskho20@gmail.com",
+        "city": "batumi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "chaxvixvi",
+        "password": "12344321",
+        "name": "giorgi chakhvadze",
+        "email": "chakhvadzeg@gmail.com",
+        "city": "kutaisi",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "tokine7",
+        "password": "mnucr7",
+        "name": "TornikeGoglidze",
+        "email": "tokoluka@gmail.com",
+        "city": "gldani",
+        "age": 20,
+        "gender": "male"
+    },
+    {
+        "admin_username": "admin123",
+        "password": "admin123",
+        "name": "admin",
+        "email": "adminadmin@gmail.com",
+        "city": "batumi",
+        "age": 22,
+        "gender": "Male"
+    },
+    {
+        "admin_username": "mamuxazara",
+        "password": "tbcmagaria123",
+        "name": "mamuka xazaradze",
+        "email": "mamu@tbc.com",
+        "city": "anaklia",
+        "age": 58,
+        "gender": "Male"
+    }
+]
